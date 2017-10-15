@@ -1,0 +1,140 @@
+@import '../../app.wxss';
+
+.official-msg-detail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.official-msg-bk {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter:blur(26px);
+}
+
+.official-msg-detail-content {
+    position: absolute;
+    top: 60rpx;
+    left: 40rpx;
+    right: 40rpx;
+    bottom: 160rpx;
+    background-color: #FAFAFA;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.official-msg-detail-header {
+    position: relative;
+    height: 250rpx;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+}
+
+.official-msg-detail-header-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.official-msg-detail-header-official {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    font-size: 44rpx;
+}
+
+.official-msg-detail-header-main {
+    position: absolute;
+    bottom: 20rpx;
+    left: 20rpx;
+}
+
+.official-msg-detail-header-title {
+    font-size: 38rpx;
+}
+
+.official-msg-detail-header-create {
+    font-size: 30rpx;
+}
+
+.official-msg-detail-body {
+    position: absolute;
+    top: 250rpx;
+    bottom: 0rpx;
+    left: 0;
+    right: 0;
+    font-size: 36rpx;
+    line-height: 1.75;
+    color: #6F6F6F;
+    text-decoration: 2em;
+}
+
+.official-msg-detail-body-scroll {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.official-msg-detail-body-content {
+    padding: 40rpx;
+    text-decoration: 2em;
+}
+
+.official-msg-detail-footer {
+    position: absolute;
+    bottom: 30rpx;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.official-msg-ico-list {
+    display: flex;
+}
+
+.official-msg-ico-item {
+    flex: 1;
+    height: 80rpx;
+}
+
+.official-msg-ico-item-bt {
+    position:relative;
+    top:-4rpx;    
+    height: 80rpx;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    line-height: 1.35;
+}
+
+.official-msg-ico-item-bt::after {
+    border: none;
+}
+
+.official-msg-ico-item.active {
+    color: #E91E63;
+}
+
+.official-msg-bottom-bk {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200rpx;
+}
+
+.official-msg-ico-item-text {
+    font-size: 30rpx;
+}

@@ -1,0 +1,60 @@
+@import '../../app.wxss';
+@import '../../style/headInfo.wxss';
+
+.group-list {
+    padding: 16rpx;
+    overflow: hidden;
+}
+
+.group-item {
+    position: relative;
+    float: left;
+    width: 350rpx;
+    height: 350rpx;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.group-item:nth-child(2n) {
+    margin-right: 0;
+}
+
+.group-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.group-text1 {
+    display: block;
+    position: relative;
+    font-size: 48rpx;
+    color: #FFFFFF;
+    line-height: 48rpx;
+    padding: 30rpx 30rpx 0 30rpx;
+}
+
+.group-text2 {
+    display:block;
+    position:relative;
+    font-size:38rpx;
+    color:#FFFFFF;
+    line-height:48rpx;
+    padding: 15rpx 30rpx;
+}
+
+.group-text3 {
+    position: absolute;
+    left: 0;
+    bottom: 10rpx;
+    width: 100%;
+    font-size: 26rpx;
+    color: #FFFFFF;
+    line-height: 48rpx;
+    text-align: center;
+}

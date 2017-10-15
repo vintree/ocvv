@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<import src="../../utils/wxParse/wxParse.wxml"/> 
+
+<view class="container">
+    <scroll-view class='scroll-container' scroll-y='true'>
+        <view class='container-body'>
+            <template is="wxParse" data="{{wxParseData:icoDetail.nodes}}"/>
+        </view>
+    </scroll-view>
+
+    <button class='ico-link' type="default" size="defaultSize" plain="plain" bindtap="icoSite" hover-class="defaultTap">
+        点击查看ICO官网
+    </button>
+</view>

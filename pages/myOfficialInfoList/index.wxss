@@ -1,0 +1,101 @@
+@import '../../app.wxss';
+
+.official-list {
+    padding: 16rpx;
+    overflow: hidden;
+}
+
+.official-item {
+    position: relative;
+    background-color: #FAFAFA;
+    border-radius: 6rpx;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+
+.official-item:nth-child(2n) {
+    margin-right: 0;
+}
+
+.official-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.official-item-header {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 250rpx;
+}
+
+.official-text1 {
+    position: absolute;
+    bottom: 20rpx;
+    left: 20rpx;
+    color: #FFFFFF;
+    font-size: 48rpx;
+}
+
+.official-item-body {
+    padding: 20rpx;
+}
+
+.official-info-item {
+    position: relative;
+    background-color: #FAFAFA;
+    border-radius: 6rpx;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+    padding: 20rpx;
+}
+
+.official-item-msg {
+    position: relative;
+    background-color: #FAFAFA;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.official-item-area1 {
+    overflow: hidden;
+    padding-bottom: 15rpx;
+}
+
+.official-item-area1-1 {
+    float: left;
+    width: 70%;
+    font-size: 38rpx;
+    color: #4A4A4A;
+}
+
+.official-item-area1-2 {
+    float: right;
+    width: 30%;
+    text-align: right;
+}
+
+.official-item-area2 {
+    overflow: hidden;
+    font-size: 32rpx;
+    padding-bottom: 15rpx;
+}
+
+.official-item-area2-1 {
+    float: left;
+    color: #999999;
+}
+
+.official-item-area2-2 {
+    float: right;
+    color: #FFAB40;
+}
+
+.official-item-area2-3 {
+    float: right;
+    font-size: 33rpx;
+    color: #999999;
+}

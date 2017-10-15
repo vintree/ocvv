@@ -1,0 +1,27 @@
+<!--index.wxml-->
+
+<import src="../../tpl/officialCard.wxml"/>
+
+<view class="container">
+    <!--
+	<view class='' wx:if='{{icoList.length === 0}}'>
+		<image src="../../pic/undefined.png" />
+	</view>
+    -->
+
+	<view class='official-list'>
+
+        <template is="officialCard" wx:for='{{officialList}}' wx:key='{{item.officialId}}' data='{{item}}'></template>
+
+        <!--
+		<template is="icoItem" data='{{icoList}}'></template>
+		<view class='ico-last' wx:if='{{isFinish}}'>
+			已加载完！
+		</view>
+		<view class='ico-last' wx:if='{{isRequestGetIcoList}}'>
+			正在加载中...
+		</view>
+        -->
+	</view>
+
+</view>

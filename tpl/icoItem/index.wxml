@@ -1,0 +1,37 @@
+<!-- icoList/index.wxml -->
+
+<template name="icoItem">
+    <view class='ico-item' wx:for='{{icoList}}' bindtap="gotoDetail" data-icoId='{{item._id}}' data-icodetaillink='{{item.icoDetailLink}}' data-icoplatformlink='{{item.icoPlatformLink}}' wx:key='unique'>
+            <view class='ico-header'>
+                <image class='ico-img' src='{{item.icoImgUrl}}' mode='aspectFill'></image>
+            </view>
+            <view class='ico-msg'>	
+                <view class='ico-title'>
+                    <text class='ico-name'>{{item.icoName}}</text>
+                    <span class='ico-icon-you iconfont icon-you fright secon-color' wx:if='{{item.icoDetailLink}}'></span>
+                </view>
+                <view class='ico-des'>
+                    <text class='block'>{{item.icoDes}}</text>
+                </view>
+                <view class='over-hide ico-info'>
+                    <view class='fleft ico-secon-size'>
+                        <view class=''>
+                            <text>目标金额</text>
+                        </view>
+                        <view>
+                            <text class='secon-color'>{{item.icoTargetAmount}}</text>
+                        </view>
+                    </view>
+                    <view class='fright ico-secon-size'>
+                        <view class=''>
+                            <text>开始时间</text>
+                        </view>
+                        <view>
+                            <text class='secon-color'>{{item.icoStarTime}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class='ico-platform'>ICO平台：{{item.icoSource}}</view>
+    </view>
+</template>

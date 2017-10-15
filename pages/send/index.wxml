@@ -1,0 +1,18 @@
+<!--index.wxml-->
+
+<view class='container'>
+	<view class='send'>
+        <form bindsubmit="formSubmit">
+            <view class='send-func'>
+                <view class='send-title'>
+                    <input type='text' name='title' placeholder='信息标题' value='{{officialInfoTitle}}' auto-focus />
+                </view>
+                
+                <view class='send-area'>
+                    <textarea class='send-textarea' name='content' bindblur='bindTextAreaBlur' placeholder='信息内容' maxlength='10000' value='{{officialInfoContent}}' />
+                </view>
+            </view>
+            <button class='send-bt' form-type='submit' hover-class='none'>发布</button>
+        </form>
+	</view>
+</view>

@@ -1,0 +1,54 @@
+/**app.wxss**/
+@import './style/iconfont.wxss';
+
+page {
+	box-sizing: content-box;	
+	background-color: #E2E2E2;
+}
+
+view, scroll-view, swiper, movable-area, cover-view {
+	box-sizing: border-box;	
+}
+
+.container {
+    height: 100%;
+    box-sizing: border-box;
+} 
+
+.ico-add {
+	font-size: 50rpx;
+}
+
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+
+.official-msg-title-1 {
+	font-size: 40rpx;
+	color: #333333;
+}
+
+.official-msg-paper-1 {
+	font-size: 34rpx;
+	color: #6F6F6F;
+}
+
+.m-bottom-10 {
+	margin-bottom: 10rpx;
+}
+
+.m-bottom-15 {
+	margin-bottom: 15rpx;
+}
+
+.m-bottom-20 {
+	margin-bottom: 20rpx;
+}
+
+.color999 {
+	color: #999;
+}

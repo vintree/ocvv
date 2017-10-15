@@ -1,0 +1,41 @@
+<!--index.wxml-->
+
+<import src="../../tpl/officialMsgCard.wxml" />
+
+<view class="container">
+    <!--
+	<view class='' wx:if='{{icoList.length === 0}}'>
+		<image src="../../pic/undefined.png" />
+	</view>
+    -->
+
+	<view class='official-list'>
+        <template is="officialMsgCard"></template>
+
+		<view class='official-item' bindtap="gotoOfficialInfoDetail">
+			<view class='official-body'>
+				<view class='official-body-t1'>CBU官方</view>
+				<view class='official-body-t2'>关于调整双11规则事项</view>
+				<view>
+					<view class='official-body-t4 fleft'>
+						1232 赞同 · 关注官方
+					</view>
+					<view class='official-body-t5 fright'>
+						12分钟前
+					</view>
+				</view>
+			</view>
+		</view>
+
+        <!--
+		<template is="msgCard" data='{{icoList}}'></template>
+		<view class='ico-last' wx:if='{{isFinish}}'>
+			已加载完！
+		</view>
+		<view class='ico-last' wx:if='{{isRequestGetIcoList}}'>
+			正在加载中...
+		</view>
+        -->
+	</view>
+
+</view>

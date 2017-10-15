@@ -1,0 +1,146 @@
+@import '../../app.wxss';
+
+page {
+    background-color: #FAFAFA;
+}
+
+.my-item {
+    position: relative;
+    background-color: #FAFAFA;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.my-item:nth-child(2n) {
+    margin-right: 0;
+}
+
+.my-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.my-item-header {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 250rpx;
+}
+
+.my-item-header.my-person {
+    text-align: center;
+}
+
+.my-text1 {
+    position: absolute;
+    bottom: 20rpx;
+    left: 20rpx;
+    color: #FFFFFF;
+    font-size: 48rpx;
+}
+
+.my-item-body {
+    padding: 20rpx;
+}
+
+.my-item {
+    position: relative;
+    background-color: #FAFAFA;
+    border-radius: 6rpx;
+    overflow: hidden;
+    margin-top: 20rpx;
+    padding: 20rpx;
+}
+
+.my-item-msg {
+    position: relative;
+    background-color: #FAFAFA;
+    border-radius: 6rpx;
+    overflow: hidden;
+    border-bottom: 20rpx solid #E2E2E2;
+}
+
+.my-item-area1 {
+    overflow: hidden;
+    padding-bottom: 15rpx;
+}
+
+.my-item-area1-1 {
+    float: left;
+    font-size: 38rpx;
+    color: #4A4A4A;
+}
+
+.my-item-area1-2 {
+    float: right;
+    width: 30%;
+    text-align: right;
+}
+
+.my-item-area2 {
+    overflow: hidden;
+    font-size: 32rpx;
+    padding-bottom: 15rpx;
+}
+
+.my-item-area2-1 {
+    float: left;
+    color: #999999;
+}
+
+.my-item-area2-2 {
+    float: right;
+    color: #FFAB40;
+}
+
+.my-item-area2-3 {
+    float: right;
+    font-size: 44rpx;
+    color: #999999;
+}
+
+.my-func-item {
+    height: 120rpx;
+    line-height: 120rpx;
+    padding-left: 20rpx;
+}
+
+.my-func-item-area2 {
+    color: #4D4D4D;
+    border-bottom: 1rpx solid #E6E6E6;
+    padding-right: 20rpx;
+}
+
+.my-userhead {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.my-userhead.my-person {
+    position: static;
+    margin-top: 30rpx;
+}
+
+.my-nickname {
+    position: absolute;
+    top: 60rpx;
+    left: 160rpx;
+    width: 200rpx;
+    color: #fff;
+}
+
+.my-nickname.my-person {
+    position: static;
+    display: block;
+    width: 100%;
+    color: #999999;
+    margin-top: 10rpx;
+}

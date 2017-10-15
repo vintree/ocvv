@@ -1,0 +1,18 @@
+<!--index.wxml-->
+
+<view class="container">
+	<view class='sendconf'>
+        <view class='myconf-func'>
+            <view class='myconf-func-item'>
+                <view class='myconf-func-item-area1 fleft'>
+                    是否开启定时发送
+                </view>
+                <view class='myconf-func-item-area2 fright'>
+                    <switch bindchange="switch2Change" />
+                </view>
+            </view>
+        </view>
+	</view>
+
+    <button class='send-bt' bindtap="gotoOfficialInfoDetail" hover-class="defaultTap">确认发送</button>
+</view>

@@ -1,0 +1,29 @@
+<!-- icoList/index.wxml -->
+
+<template name="officialInfoCard">
+    <view class='official-info-item' bindtap="gotoOfficialInfoDetail" data-params='{{item}}'>
+        <view class='official-msg-title-1 m-bottom-10'>{{item.officialInfoTitle}}</view>
+        <view class='official-msg-paper-1 m-bottom-15'>{{item.officialInfoCutContent}}</view>
+        <view class='official-item-area2'>
+            <text class='official-item-area2-1'>{{item.officialInfoSupport || 0}} 赞同 · {{item.officialInfoShare || 0}} 分享</text>
+            <text class='official-item-area2-2'>{{item.createRelative}}</text>
+        </view>
+    </view>
+</template>
+
+<template name="officialInfoCreateCard">
+    <view class='official-item' bindtap="gotoOfficialInfoDetail" data-params='{{item}}'>
+        <view class='official-head' style='background-image: url({{item.officialPic}})'></view>
+        <view class='official-body'>
+            <view class='official-body-t1'>{{item.officialName}}</view>
+            <view class='official-body-t2'>{{item.officialInfoTitle}}</view>
+            <view class='official-body-t3'>{{item.officialInfoCutContent}}</view>
+            <view>
+                <view class='official-body-t4 fleft'>
+                    {{item.officialInfoSupport}} 赞同 · {{item.officialInfoShare}} 分享
+                </view>
+                <text class='official-body-t5 fright'>{{item.createRelative}}</text>
+            </view>
+        </view>
+    </view>
+</template>

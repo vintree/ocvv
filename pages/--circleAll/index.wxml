@@ -1,0 +1,48 @@
+<!--index.wxml-->
+
+<import src="../../tpl/icoItem/index.wxml"/>
+<import src="../../tpl/headInfo.wxml"/>
+
+<view class="container">
+    <!--
+	<view class='' wx:if='{{icoList.length === 0}}'>
+		<image src="../../pic/undefined.png" />
+	</view>
+    -->
+
+    <template is="headInfo" data='{{data: circleFocus}}'></template>
+
+	<view class='group-list'>
+	    <view class='group-item' style='background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506894664095&di=381c49e6492ae745217c69ecfe50de71&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F15%2F30%2F99%2F15309959-c70d94627f2d4c2fb64b24fafe812113-2.jpg")'>
+            <navigator url="../findAll/index.wxml" redirect hover-class="className">
+                <view class='group-layout'></view>
+                <text class='group-text1'>区块链</text>
+                <text class='group-text2'>Block chain</text>
+                <text class='group-text3'>
+                    已关注 12 / 23 官方
+                </text>
+            </navigator>
+        </view>
+
+        <view class='group-item' style='background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506894664095&di=381c49e6492ae745217c69ecfe50de71&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F15%2F30%2F99%2F15309959-c70d94627f2d4c2fb64b24fafe812113-2.jpg")'>
+            <navigator url="../findAll/index.wxml" redirect hover-class="className">
+                <view class='group-layout'></view>
+                <text class='group-text1'>电子商务</text>
+                <text class='group-text2'>The electronic commerce</text>
+                <text class='group-text3'>
+                    已关注 2 / 233 官方
+                </text>
+            </navigator>
+        </view>
+        <!--
+		<template is="icoItem" data='{{icoList}}'></template>
+		<view class='ico-last' wx:if='{{isFinish}}'>
+			已加载完！
+		</view>
+		<view class='ico-last' wx:if='{{isRequestGetIcoList}}'>
+			正在加载中...
+		</view>
+        -->
+	</view>
+
+</view>

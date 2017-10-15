@@ -1,0 +1,8 @@
+<!-- icoList/index.wxml -->
+
+<template name="headInfo">
+    <view class='find-header'>
+        <view class='fleft'>已关注 {{data.circleFocusCount}} / {{data.circleFullCount}} 圈子</view>
+        <view class='ico-add fright iconfont icon-jia' bindtap="gotoCircleAll"></view>
+    </view>
+</template>

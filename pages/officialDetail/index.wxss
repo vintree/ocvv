@@ -1,0 +1,98 @@
+@import '../../app.wxss';
+
+.official-list {
+    padding: 16rpx;
+    overflow: hidden;
+}
+
+.official-info {
+    position: relative;
+    background-color: #FAFAFA;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.official-info:nth-child(2n) {
+    margin-right: 0;
+}
+
+.official-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.official-info-header {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 250rpx;
+}
+
+.official-text1 {
+    position: absolute;
+    bottom: 20rpx;
+    left: 20rpx;
+    color: #FFFFFF;
+    font-size: 48rpx;
+}
+
+.official-info-body {
+    padding: 20rpx;
+}
+
+.official-info-area1 {
+    overflow: hidden;
+    font-size: 32rpx;
+    padding: 0 20rpx;
+    height: 110rpx;
+    line-height: 110rpx;
+}
+
+.official-info-area2-1 {
+    float: left;
+    color: #999999;
+}
+
+.official-info-area2-2 {
+    float: right;
+    color: #FFAB40;
+    margin-top: 20rpx;
+}
+
+.official-info-list {
+    padding: 20rpx 0;
+}
+
+.official-info-item {
+    display: flex;
+    padding: 20rpx 0;
+}
+
+.official-info-item-left {
+    flex: 1;
+    text-align: center;
+}
+
+.official-info-item-right {
+    flex: 4;
+    border-bottom: 1rpx solid #E6E6E6;
+    
+}
+
+.official-info-item-right-item {
+    margin-bottom: 40rpx;
+}
+
+.official-info-item-right-item-name {
+    font-size: 42rpx;
+    color: #4D4D4D;
+}
+
+.official-info-item-right-item-label {
+    font-size: 32rpx;
+    color: #999999;
+}

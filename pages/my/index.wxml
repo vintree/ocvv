@@ -1,0 +1,59 @@
+<!--index.wxml-->
+
+<view class="container">
+	<view class='my'>
+        <view class='my-item-msg' bindtap="gotoMyOfficialDetail">
+            <view class='my-item-header' style='background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506894664095&di=381c49e6492ae745217c69ecfe50de71&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F15%2F30%2F99%2F15309959-c70d94627f2d4c2fb64b24fafe812113-2.jpg")' wx:if='{{!!userInfo.officialId}}'>
+                <view class='my-layout'></view>
+                <image class='my-userhead' src='{{userInfo.avatarUrl}}' />
+                <text class='my-nickname'>{{userInfo.nickName}}</text>
+                <text class='my-text1'>{{officialInfo.officialName}}</text>
+            </view>
+            <view class='my-item-header my-person' wx:else>
+                <image class='my-userhead my-person' src='{{userInfo.avatarUrl}}' />
+                <text class='my-nickname my-person'>{{userInfo.nickName}}</text>
+            </view>
+            <view class='my-item-body' wx:if='{{!!userInfo.officialId}}'>
+                <view class='my-item-area1'>
+                    <view class='my-item-area1-1'>
+                        {{officialInfo.officialDes}}
+                    </view>
+                </view>
+                <view class='my-item-area2'>
+                    <text class='my-item-area2-1'>{{officialInfo.officialFocus}} 关注 · {{officialInfo.officialFullSupport}} 赞同 · {{officialInfo.officialFullShare}} 分享</text>
+                    <text class='my-item-area2-3 iconfont icon-you'></text>
+                </view>
+            </view>
+        </view>
+
+        <view class='my-func' wx:if='{{!!userInfo.officialId}}'>
+            <view class='my-func-item' bindtap='gotoSend'>
+                <view class='my-func-item-area2'>
+                    创建消息
+                    <view class='color999 iconfont icon-you fright'></view>
+                </view>
+            </view>
+            <view class='my-func-item' bindtap='gotoMyOfficialInfoList'>
+                <view class='my-func-item-area2'>
+                    消息列表
+                    <view class='color999 iconfont icon-you fright'></view>                    
+                </view>
+            </view>
+        </view>
+
+        <view class='my-func' wx:else>
+            <view class='my-func-item' bindtap='gotoSend'>
+                <view class='my-func-item-area2'>
+                    全部动态
+                    <view class='color999 iconfont icon-you fright'></view>
+                </view>
+            </view>
+            <view class='my-func-item'>
+                <view class='my-func-item-area2'>
+                    申请官方
+                    <view class='color999 iconfont icon-you fright'></view>                    
+                </view>
+            </view>
+        </view>
+	</view>
+</view>

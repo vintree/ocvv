@@ -1,0 +1,82 @@
+/**index.wxss**/
+
+.ico-list {
+	height: 100%;
+}
+
+.ico-item {
+	position: relative;
+	background-color: #fff;
+	padding-bottom: 10rpx;
+	border-bottom: 20rpx solid #DDDDDD;
+}
+
+.ico-item:last-child {
+	border-bottom: 1rpx solid #DDDDDD;
+}
+
+.ico-header {
+	position: relative;
+	width: 100%;
+	height: 350rpx;
+}
+
+.ico-img {
+	width: 100%;
+	height: 100%;
+}
+
+.ico-title {
+	padding: 20rpx 20rpx 0;
+	font-size: 45rpx;
+	color: #333;
+}
+
+.ico-name {
+	display: inline-block;
+	font-size: 45rpx;
+	width: 85%;
+	overflow:hidden; 
+    text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
+.ico-des {
+	padding: 20rpx 20rpx 0;	
+	font-size: 35rpx;
+	color: #888;
+	line-height: 1.45;
+}
+
+.ico-info {
+	padding: 20rpx;
+}
+
+.ico-countdown {
+	padding: 20rpx;
+	text-align: center;
+	color: #d81e06;
+	font-weight: bold;
+}
+
+.ico-icon-you {
+	font-size: 105%;
+}
+
+.ico-secon-size {
+	font-size: 35rpx;	
+}
+
+.ico-last {
+	padding: 30rpx 0;
+	text-align: center;
+	color: #888;
+	font-size: 35rpx;
+}
+
+.ico-platform {
+	padding: 15rpx 0;
+	text-align: center;
+	color: #888;
+	font-size: 30rpx;
+}

@@ -1,0 +1,144 @@
+@import '../../app.wxss';
+
+page {
+    background-color: #FAFAFA;
+}
+
+.myconf-list {
+    padding: 16rpx;
+    overflow: hidden;
+}
+
+.myconf-info {
+    position: relative;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.myconf-info:nth-child(2n) {
+    margin-right: 0;
+}
+
+.myconf-layout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 200rpx;
+}
+
+.myconf-info-header {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 250rpx;
+    background-color: #B6B6B6;
+}
+
+.myconf-text1-placeholder {
+    color: #fff;
+}
+
+.myconf-text1 {
+    position: absolute;
+    bottom: 20rpx;
+    left: 20rpx;
+    color: #FFFFFF;
+    font-size: 48rpx;
+    border-bottom: 1rpx solid #fff;
+    color: #fff;
+    padding: 20rpx 0;
+}
+
+.myconf-info-body {
+    padding: 20rpx;
+}
+
+.myconf-info-area1 {
+    overflow: hidden;
+    font-size: 32rpx;
+    padding: 0 20rpx;
+    height: 110rpx;
+    line-height: 110rpx;
+}
+
+.myconf-info-area2-1 {
+    float: left;
+    color: #999999;
+}
+
+.myconf-info-area2-2 {
+    float: right;
+    color: #FFAB40;
+    margin-top: 20rpx;
+}
+
+.myconf-info-list {
+    padding: 20rpx 0;
+}
+
+.myconf-info-item {
+    display: flex;
+    padding: 20rpx 0;
+}
+
+.myconf-info-item-left {
+    flex: 1;
+    text-align: center;
+    color: #3F51B5;
+}
+
+.myconf-info-item-right {
+    flex: 4;
+    border-bottom: 1rpx solid #E6E6E6;
+    
+}
+
+.myconf-info-item-right-item {
+    margin-bottom: 40rpx;
+}
+
+.myconf-info-item-right-item-name {
+    font-size: 42rpx;
+    color: #4D4D4D;
+    /* border-bottom: 1rpx solid #E91E63; */
+    padding: 20rpx 0;
+    width: auto;
+}
+
+.myconf-info-item-right-item-name-area {
+    height: 130rpx;
+}
+
+.myconf-info-item-right-input-placeholder {
+    color: #ACACAC;
+}
+
+.myconf-info-item-right-item-label {
+    font-size: 32rpx;
+    color: #999999;
+    border-bottom: 1rpx solid #E91E63;
+    padding: 20rpx 0;    
+}
+
+.myconf-upload {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    width: 120rpx;
+    font-size: 54rpx;
+    background-color: #D8D8D8;
+    color: #7D7D7D;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.myconf-userhead {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}

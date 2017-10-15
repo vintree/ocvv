@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/circleList/index",
+    "pages/officialList/index",
+    "pages/officialDetail/index",
+    "pages/officialInfoList/index",
+    "pages/officialInfoDetail/index",
+    "pages/officialInfoDetailShare/index",
+    "pages/my/index",
+    "pages/myOfficialDetail/index",
+    "pages/myDynamic/index",
+    "pages/myOfficialInfoList/index",
+    "pages/myOfficialInfoDetail/index",
+    "pages/send/index",
+    "pages/sendConf/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#E91E63",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "官方信息",
+    "backgroundColor": "#E2E2E2",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#d81e06",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./pic/official/index.png",
+        "selectedIconPath": "./pic/official/index-active.png"
+      },
+      {
+        "pagePath": "pages/circleList/index",
+        "text": "发现",
+        "iconPath": "./pic/official/find.png",
+        "selectedIconPath": "./pic/official/find-active.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "./pic/official/my.png",
+        "selectedIconPath": "./pic/official/my-active.png"
+      }
+    ]
+  },
+  "debug": true
+}

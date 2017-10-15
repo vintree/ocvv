@@ -1,0 +1,112 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true
+	},
+	"compileType": "weapp",
+	"libVersion": "1.5.4",
+	"appid": "wx826671981dcd4102",
+	"projectname": "%E5%AE%98%E6%96%B9%E6%B6%88%E6%81%AF",
+	"condition": {
+		"weapp": {
+			"current": 5,
+			"list": [
+				{
+					"id": 0,
+					"name": "官方列表",
+					"pathName": "pages/officialList/index",
+					"query": "isDebug=1"
+				},
+				{
+					"id": 1,
+					"name": "官方信息列表",
+					"pathName": "pages/officialInfoList/index",
+					"query": "officialId=59dbbd2651e8a32a8c280074"
+				},
+				{
+					"id": 2,
+					"name": "官方信息详情",
+					"pathName": "pages/officialInfoDetail/index",
+					"query": "officialInfoId=59dfbb34ec7a1bb9f654e684"
+				},
+				{
+					"id": 3,
+					"name": "官方信息",
+					"pathName": "pages/officialDetail/index",
+					"query": "officialId=59dbbd2651e8a32a8c280074"
+				},
+				{
+					"id": 4,
+					"name": "我的",
+					"pathName": "pages/my/index",
+					"query": "isDebug=1"
+				},
+				{
+					"id": 5,
+					"name": "我的配置项",
+					"pathName": "pages/myOfficialDetail/index",
+					"query": "officialId=59dbbd2651e8a32a8c280074"
+				},
+				{
+					"id": -1,
+					"name": "我的动态",
+					"pathName": "pages/myDynamic/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发送配置",
+					"pathName": "pages/sendConf/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发送",
+					"pathName": "pages/send/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ICO完结",
+					"pathName": "pages/icoFinish/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发现",
+					"pathName": "pages/circle/index",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "圈子列表",
+					"pathName": "pages/circleList/index",
+					"query": "isDebug=1"
+				},
+				{
+					"id": -1,
+					"name": "圈分享",
+					"pathName": "pages/officialInfoDetailShare/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "官方信息详情",
+					"pathName": "pages/myOfficialInfoDetail/index",
+					"query": "officialId=59dbbd2651e8a32a8c280074&officialInfoTitle=天猫事业部-同时&officialInfoSupport=0&officialInfoShare=0&isShow=true&isActive=true&isDelete=false&update=1508052115000&create=1507572911000&officialInfoId=59e3093962381a0241114e62&officialInfoCutContent=年底啊大海风流史法萨芬接口李芳静安寺&createRelative=21 分钟前&createFull=2017年10月15日 15:07&officialName=天猫官方&officialDes=汇聚天下商品，24小时通行天下&officialPic=https://timgsa.baidu.com/timg"
+				}
+			]
+		},
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		}
+	}
+}

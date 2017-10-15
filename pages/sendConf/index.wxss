@@ -1,0 +1,23 @@
+@import '../../app.wxss';
+
+.myconf-func {}
+
+.myconf-func-item {
+    padding: 20rpx 40rpx;
+    overflow: hidden;
+    background-color: #FAFAFA;
+}
+
+.myconf-func-item-area1 {
+    line-height: 70rpx;
+}
+
+.send-bt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #E91E63;
+    color: #fff;
+    border-radius: 6rpx;
+}
