@@ -110,6 +110,7 @@
 }
 
 .official-msg-ico-item-bt {
+    flex: 1;
     position:relative;
     top:-4rpx;    
     height: 80rpx;

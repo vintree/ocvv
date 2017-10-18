@@ -1,0 +1,7 @@
+.down-last {
+    padding: 30rpx 0;
+	text-align: center;
+	color: #888;
+    font-size: 35rpx;
+    background-color:#FAFAFA;    
+}

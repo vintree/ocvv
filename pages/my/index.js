@@ -2,7 +2,7 @@
 //获取应用实例
 var app = getApp()
 var { api } = require('../../config/api.default')
-// const { getEnhanceUserInfo } = require('../../lib/authorize')
+const { getEnhanceUserInfo } = require('../../lib/authorize')
 const { request } = require('../../lib/request')
 Page({
 	data: {
@@ -25,45 +25,54 @@ Page({
             url: `../myOfficialInfoList/index?officialId=${officialId}`
         })
 	},
+	gotoMyDynamic: function(e) {
+		wx.navigateTo({
+            url: `../myDynamic/index`
+        })
+	},
 	onLoad: function (req) {
-		wx.getUserInfo({
-			success: (res) => {
-				const userInfo = res.userInfo
-				request({
-					key: 'userValid',
-					data: {
-						...res.userInfo,
-					},
-					isLogin: true,
-					success: (res) => {
-						if(res.code === 200) {
-							this.setData({
-								userInfo: {
-									...userInfo,
-									...res.data.userInfo
+		getEnhanceUserInfo((wxSessionCode, userInfo) => {
+			console.log('into getEnhanceUserInfo');
+			request({
+				key: 'userValid',
+				data: {
+					...userInfo,
+				},
+				isLogin: true,
+				success: (res) => {
+					console.log('into userValid');
+					if(res.code === 200) {
+						this.setData({
+							userInfo: {
+								...userInfo,
+								...res.data.userInfo
+							}
+						})
+
+						if(res.data.userInfo.officialId) {
+							request({
+								key: 'officialGetOfficialDetail',
+								isLogin: true,
+								data: {
+									officialId: res.data.userInfo.officialId
+								},
+								success: (res) => {
+									if(res.code === 200) {
+										this.setData({
+											officialInfo: res.data.officialInfo
+										})
+									}
 								}
 							})
-
-							if(res.data.userInfo.officialId) {
-								request({
-									key: 'officialGetOfficialInfo',
-									isLogin: true,
-									data: {
-										officialId: res.data.userInfo.officialId
-									},
-									success: (res) => {
-										if(res.code === 200) {
-											this.setData({
-												officialInfo: res.data.officialInfo
-											})
-										}
-									}
-								})
-							}
 						}
 					}
-				})
-			}
+				},
+				fial: () => {
+					console.log('into userValid fail');					
+				}
+			})
+		}, (res) => {
+			console.log('dddsss');
 		})
 	}
 })

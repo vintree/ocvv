@@ -29,34 +29,45 @@
 }
 
 .official-body-t1 {
-/* CBU官方: */
     font-size: 30rpx;
     color: #4A4A4A;
     padding-bottom: 10rpx;
 }
 
+.official-body-t1-dynamic {
+    font-size: 30rpx;
+    color: #4A4A4A;
+    padding-bottom: 10rpx;
+}
+
+.official-body-tips-color {
+    color: #E91E63;
+}
+
 .official-body-t2 {
-/* 关于调整双11规则事项: */
     font-size: 48rpx;
     color: #333333;
     padding-bottom: 5rpx;
 }
 
+.official-body-t2-dynamic {
+    font-size: 48rpx;
+    color: #333333;
+    padding: 30rpx 0;
+}
+
 .official-body-t3 {
-    /* 阿斯蒂芬接口立即安大厦金卡三六九等分开说: */
     font-size: 36rpx;
     color: #6F6F6F;
     padding-bottom: 20rpx;
 }
 
 .official-body-t4 {
-/* 1,232 赞同 · 关注官方: */
     font-size: 32rpx;
     color: #999999;
 }
 
 .official-body-t5 {
-    /* 12分钟前: */
     font-size: 32rpx;
     color: #FFAB40;
 }

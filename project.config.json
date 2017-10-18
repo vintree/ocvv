@@ -12,13 +12,13 @@
 	"projectname": "%E5%AE%98%E6%96%B9%E6%B6%88%E6%81%AF",
 	"condition": {
 		"weapp": {
-			"current": 5,
+			"current": 1,
 			"list": [
 				{
 					"id": 0,
 					"name": "官方列表",
 					"pathName": "pages/officialList/index",
-					"query": "isDebug=1"
+					"query": "circleId=59d6853c7c544f3f771cc967"
 				},
 				{
 					"id": 1,
@@ -97,6 +97,18 @@
 					"name": "官方信息详情",
 					"pathName": "pages/myOfficialInfoDetail/index",
 					"query": "officialId=59dbbd2651e8a32a8c280074&officialInfoTitle=天猫事业部-同时&officialInfoSupport=0&officialInfoShare=0&isShow=true&isActive=true&isDelete=false&update=1508052115000&create=1507572911000&officialInfoId=59e3093962381a0241114e62&officialInfoCutContent=年底啊大海风流史法萨芬接口李芳静安寺&createRelative=21 分钟前&createFull=2017年10月15日 15:07&officialName=天猫官方&officialDes=汇聚天下商品，24小时通行天下&officialPic=https://timgsa.baidu.com/timg"
+				},
+				{
+					"id": -1,
+					"name": "我的配置项",
+					"pathName": "pages/myOfficialDetail/index",
+					"query": "officialId=59dbbd2651e8a32a8c280074"
+				},
+				{
+					"id": -1,
+					"name": "我的动态",
+					"pathName": "pages/myDynamic/index",
+					"query": ""
 				}
 			]
 		},

@@ -21,8 +21,6 @@
             </view>
         </view>
 
-        
-
         <view class='official-msg-detail-footer'>
             <view class='official-msg-ico-list'>
                 <view class="official-msg-ico-item {{isOfficialInfoSupport ? 'active' : ''}}" bindtap='handleSupport'>
@@ -34,17 +32,11 @@
                     <view class='official-msg-ico-item-text'>分享 {{officialInfo.officialInfoShare}}</view>
                 </button>
                 <view class='official-msg-ico-item' bindtap='gotoOfficialInfoDetailShare'>
-                    <view class='official-msg-ico-item-icon iconfont icon-xingzhuang'></view>
+                    <view class='official-msg-ico-item-icon iconfont icon-quan'></view>
                     <view class='official-msg-ico-item-text'>圈分享</view>
                 </view>
-                <!--
-                <view class='official-msg-ico-item'>
-                    <view class='official-msg-ico-item-icon iconfont icon-pinglun1'></view>
-                    <view class='official-msg-ico-item-text'>评论 {{officialMsg.content.contentReview}}</view>
-                </view>
-                -->
                 <view class='official-msg-ico-item' bindtap='gotoOfficialInfoList'>
-                    <view class='official-msg-ico-item-icon iconfont icon-xingzhuang'></view>
+                    <view class='official-msg-ico-item-icon iconfont icon-gongsi1'></view>
                     <view class='official-msg-ico-item-text'>官方</view>
                 </view>
             </view>

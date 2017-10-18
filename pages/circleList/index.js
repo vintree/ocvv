@@ -1,22 +1,12 @@
 //index.js
 //获取应用实例
 var app = getApp()
-var {
-	api
-} = require('../../config/api.default')
-const { 
-	circleList,
-	circleFocus
-} = require('../../data/circle')
+var { request } = require('../../lib/request')
 const urlx = require('../../lib/urlx')
+
 Page({
 	data: {
 		circleList: []
-	},
-    gotoCircleAll: function(e) {
-        wx.navigateTo({
-            url: `../circleAll/index`
-        })
 	},
 	gotoOfficialList: function(e) {
         wx.navigateTo({
@@ -25,25 +15,48 @@ Page({
 				circleId: e.currentTarget.dataset.circleid
 			}, true)}`
         })
-    },
-	gotoofficialInfoList: function(e) {
-        wx.navigateTo({
-            url: `../officialInfoList/index`
-        })
-    },
-	onLoad: function (req) {
-		const urlParams = req
-		wx.request({
-			url: api({
-				key: 'circleGetListAndOfficialCount'
-			}),
+	},
+	onPullDownRefresh: function() {
+		this.requestCircleList({
+			wxScrollType: 'top'
+		})
+	},
+	requestCircleList: function(options = {}) {
+		const { wxScrollType } = options
+		request({
+			key: 'circleGetListAndOfficialCount',
 			success: (req) => {
-				console.log('circleList', req.data.data.circleList);
-				this.setData({
-					circleList: req.data.data.circleList,
-					urlParams
-				})
+				if(req.code === 200) {
+					wx.hideToast()
+					wx.stopPullDownRefresh()
+					if(wxScrollType === 'top') {
+						wx.showToast({
+							title: '刷新成功',
+							icon: 'success',
+							duration: 1200
+						})
+					}
+					this.setData({
+						circleList: req.data.circleList,
+					})
+				} else {
+					wx.showToast({
+						title: '加载失败',
+						icon: 'fial',
+						duration: 1200
+					})
+				}
 			}
 		})
+	},
+	onLoad: function (req) {
+		wx.showLoading({
+			title: '加载中...',
+			mask: true
+		})
+		this.setData({
+			urlParams: req
+		})
+		this.requestCircleList()
 	}
 })

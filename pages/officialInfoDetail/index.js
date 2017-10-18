@@ -39,7 +39,7 @@ Page({
 					isLogin: true,
 					success: (res) => {
 						if(res.code === 200) {
-							console.log('req', res);
+							console.log('res', res);
 							officialInfo.officialInfoShare = res.data.officialInfoShare
 							this.setData({
 								officialInfo
@@ -84,18 +84,18 @@ Page({
 		})
 	},
 	gotoOfficialInfoList: function(e) {
-        wx.navigateTo({
-            url: `../officialInfoList/index`
+        wx.redirectTo({
+            url: `../officialInfoList/index?officialId=${this.data.urlParams.officialId}`
         })
 	},
 	gotoOfficialInfoDetailShare: function(e) {
 		wx.navigateTo({
-            url: `../officialInfoDetailShare/index`
+            url: `../officialInfoDetailShare/index?officialInfoId=${this.data.urlParams.officialInfoId}`
         })
 	},
-	onLoad: function (req) {
+	onLoad: function (res) {
 		this.setData({
-			urlParams: req
+			urlParams: res
 		})
 
 		wx.showLoading({
@@ -106,7 +106,7 @@ Page({
 		request({
 			key: 'infoGet',
 			data: {
-				officialInfoId: req.officialInfoId,
+				officialInfoId: res.officialInfoId,
 			},
 			success: (res) => {
 				wx.hideLoading()

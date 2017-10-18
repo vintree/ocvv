@@ -6,13 +6,16 @@ var {
 } = require('../../config/api.default')
 const official = require('../../data/official')
 const content = require('../../data/officialContent')
+const {
+	getEnhanceUserInfo
+} = require('../../lib/authorize')
+const { request } = require('../../lib/request')
 
-let isRequestGetIcoList = false
-let lockRequestIcoList = false
 Page({
 	data: {
-		officialMsg: {},
-		isContentGood: false
+		officialInfo: {},
+		isOfficialInfoSupport: false,
+		urlParams: {}
 	},
 	onShareAppMessage: function(res) {
 		if (res.from === 'button') {
@@ -20,11 +23,30 @@ Page({
 			console.log(res.target)
 		}
 		return {
-			title: '自定义转发标题',
-			path: '/pages/officialInfoDetail?id=123',
-			success: function(res) {
-				console.log('success');
-				// 转发成功
+			title: this.data.official.officialName,
+			path: `/pages/officialInfoDetail?officialInfoId=${this.data.urlParams.officialInfoId}`,
+			success: (res) => {
+				let { officialInfo, urlParams } = this.data
+				officialInfo.officialInfoShare = officialInfo.officialInfoShare++
+				this.setData({
+					officialInfo: officialInfo
+				})
+				request({
+					key: 'dynamicInfoShare',
+					data: {
+						officialInfoId: urlParams.officialInfoId
+					},
+					isLogin: true,
+					success: (res) => {
+						if(res.code === 200) {
+							console.log('res', res);
+							officialInfo.officialInfoShare = res.data.officialInfoShare
+							this.setData({
+								officialInfo
+							})
+						}
+					}
+				})
 			},
 			fail: function(res) {
 				// 转发失败
@@ -32,24 +54,71 @@ Page({
 			}
 		}
 	},
-	handleGood: function() {
-		console.log('ssss');
+	handleSupport: function() {
+		let { officialInfo, urlParams } = this.data
+		officialInfo.officialInfoSupport = officialInfo.officialInfoSupport + 1
+		if(this.data.isOfficialInfoSupport) return
+
 		this.setData({
-			isContentGood: !this.data.isContentGood
+			isOfficialInfoSupport: !this.data.isOfficialInfoSupport,
+			officialInfo: officialInfo
+		})
+		request({
+			key: 'dynamicInfoSupport',
+			data: {
+				officialInfoId: urlParams.officialInfoId
+			},
+			isLogin: true,
+			success: (res) => {
+				wx.hideLoading()
+				if(res.code === 200) {
+					const officialInfoSupport = res.data.officialInfoSupport
+					const isOfficialInfoSupport = res.data.officialInfoSupport
+					officialInfo.officialInfoSupport = officialInfoSupport
+					this.setData({
+						isOfficialInfoSupport,
+						officialInfo
+					})
+				}
+			}
 		})
 	},
 	gotoOfficialInfoList: function(e) {
-        wx.navigateTo({
-            url: `../officialInfoList/index`
+        wx.redirectTo({
+            url: `../officialInfoList/index?officialId=${this.data.urlParams.officialId}`
         })
-    },
-	onLoad: function () {
-		const officialMsg = {
-			official: official[0],
-			content: content[0]
-		}
+	},
+	gotoOfficialInfoDetailShare: function(e) {
+		wx.navigateTo({
+            url: `../officialInfoDetailShare/index?officialId=${this.data.urlParams.officialId}`
+        })
+	},
+	onLoad: function (res) {
 		this.setData({
-			officialMsg
+			urlParams: res
+		})
+
+		wx.showLoading({
+			title: '加载中',
+			mask: true
+		})
+
+		request({
+			key: 'infoGet',
+			data: {
+				officialInfoId: res.officialInfoId,
+			},
+			success: (res) => {
+				wx.hideLoading()
+				if(res.code === 200) {
+					const { official, officialInfo, isOfficialInfoSupport } = res.data
+					this.setData({
+						official,
+						officialInfo,
+						isOfficialInfoSupport
+					})
+				}
+			}
 		})
 	}
 })

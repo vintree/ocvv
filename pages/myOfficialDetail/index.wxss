@@ -81,16 +81,22 @@ page {
     padding: 20rpx 0;
 }
 
+.myconf-info-item:last-child .myconf-info-item-right {
+    border: 0;
+    margin-bottom: 40rpx;
+}
+
 .myconf-info-item-left {
     flex: 1;
     text-align: center;
-    color: #3F51B5;
+    color: #E91E63;
+    font-size: 44rpx;
 }
 
 .myconf-info-item-right {
     flex: 4;
     border-bottom: 1rpx solid #E6E6E6;
-    
+    padding-right: 40rpx;
 }
 
 .myconf-info-item-right-item {
@@ -141,4 +147,40 @@ page {
     width: 120rpx;
     height: 120rpx;
     border-radius: 50%;
+}
+
+.my-map {
+    position: relative;
+    top: 4rpx;
+    color: rgb(100, 214, 65);
+    font-size: 50rpx;
+}
+
+.myconf-info-item-right-item-address {
+    overflow: hidden;
+    font-size:42rpx;
+    color:#4D4D4D;
+    padding:20rpx 0;
+    width:auto;
+}
+
+.myconf-info-item-right-item-address-text {
+    float: left;
+    width: 88%;
+}
+
+.submit-bt {
+    position: fixed;
+    bottom: 40rpx;
+    right: 40rpx;
+    background-color: #E91E63;
+    color: #fff;
+    font-size: 30rpx;
+    border-radius: 80rpx;
+    box-shadow: 0 0 24rpx 0 rgb(133, 133, 133);
+    z-index: 999;
+}
+
+.submit-bt::after {
+    border: 0;
 }

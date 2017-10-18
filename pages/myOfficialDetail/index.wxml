@@ -2,24 +2,42 @@
 
 <view class="container">
 	<view class='myconf-info'>
+    <form bindsubmit="formSubmit">
         <view class='myconf-info-header' style='background-image: url({{officialInfo.officialPic}})'>
             <image class='myconf-layout' src="../../pic/img-bk.png" />
-            <!--
-            <view class='myconf-layout'></view>
-            -->
             <image class='myconf-userhead' src='{{officialInfo.officialPic}}' />
             <view class='myconf-upload iconfont icon-jia' bindtap="uploadPic"></view>
-            <input class='myconf-text1' placeholder-class='myconf-text1-placeholder' type="text" placeholder="请输入名称" auto-focus value='{{officialInfo.officialName}}' />
+            <input class='myconf-text1' placeholder-class='myconf-text1-placeholder' type="text" placeholder="请输入名称" name='officialName' value='{{officialInfo.officialName}}' />
         </view>
         <view class='myconf-info-list'>
             <view class='myconf-info-item'>
-                <view class='myconf-info-item-left'>
-                    +
-                </view>
+                <view class='myconf-info-item-left iconfont icon-xingzhuang'></view>
                 <view class='myconf-info-item-right'>
                     <view class='myconf-info-item-right-group'>
                         <view class='myconf-info-item-right-item'>
-                            <input class='myconf-info-item-right-item-name' placeholder-class='myconf-info-item-right-input-placeholder' type="text" placeholder="请输入公司/机构全称" value='{{officialInfo.officialFullName}}' />
+                            <input class='myconf-info-item-right-item-name' placeholder-class='myconf-info-item-right-input-placeholder' type="text" placeholder="请输入公司/机构全称" name='officialFullName' value='{{officialInfo.officialFullName}}' />
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class='myconf-info-item'>
+                <view class='myconf-info-item-left iconfont icon-youxiang'></view>
+                <view class='myconf-info-item-right'>
+                    <view class='myconf-info-item-right-group'>
+                        <view class='myconf-info-item-right-item'>
+                            <input class='myconf-info-item-right-item-name' placeholder-class='myconf-info-item-right-input-placeholder' type="text" placeholder="请输入邮箱" name='officialEmail' value='{{officialInfo.officialEmail}}' />
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class='myconf-info-item'>
+                <view class='myconf-info-item-left iconfont icon-dianhua'></view>
+                <view class='myconf-info-item-right'>
+                    <view class='myconf-info-item-right-group'>
+                        <view class='myconf-info-item-right-item'>
+                            <input class='myconf-info-item-right-item-name' placeholder-class='myconf-info-item-right-input-placeholder' type="text" placeholder="请输入电话号" name='officialPhone' value='{{officialInfo.officialPhone}}' />
                         </view>
                     </view>
                 </view>
@@ -32,52 +50,32 @@
                 <view class='myconf-info-item-right'>
                     <view class='myconf-info-item-right-group'>
                         <view class='myconf-info-item-right-item'>
-                            <input class='myconf-info-item-right-item-name' placeholder-class='myconf-info-item-right-input-placeholder' type="text" placeholder="请输入邮箱" value='{{officialInfo.officialEmail}}' />
+                            <textarea class='myconf-info-item-right-item-name myconf-info-item-right-item-name-area' name='content' bindblur='bindTextAreaBlur' placeholder='请输入公司描述' maxlength='10000' name='officialDes' value='{{officialInfo.officialDes}}' />
                         </view>
                     </view>
                 </view>
             </view>
 
             <view class='myconf-info-item'>
-                <view class='myconf-info-item-left'>
-                    +
-                </view>
+                <view class='myconf-info-item-left iconfont icon-dizhi'></view>
                 <view class='myconf-info-item-right'>
                     <view class='myconf-info-item-right-group'>
                         <view class='myconf-info-item-right-item'>
-                            <input class='myconf-info-item-right-item-name' placeholder-class='myconf-info-item-right-input-placeholder' type="text" placeholder="请输入电话号" value='{{officialInfo.officialPhone}}' />
+                            <view class='myconf-info-item-right-item-address' bindtap='handleMap'>
+                                <view class='myconf-info-item-right-item-address-text'>
+                                    {{officialInfo.officialAddress}}
+                                </view>
+                                <view class='my-map fright iconfont icon-dizhi'></view>
+                            </view>
+                            <input class='myconf-info-item-right-item-name' placeholder-class='myconf-info-item-right-input-placeholder' type="text" placeholder="请输入门牌地址" name='officialDoorplate' value='{{officialInfo.officialDoorplate}}' />
                         </view>
                     </view>
                 </view>
             </view>
-
-            <view class='myconf-info-item'>
-                <view class='myconf-info-item-left'>
-                    +
-                </view>
-                <view class='myconf-info-item-right'>
-                    <view class='myconf-info-item-right-group'>
-                        <view class='myconf-info-item-right-item'>
-                            <textarea class='myconf-info-item-right-item-name myconf-info-item-right-item-name-area' name='content' bindblur='bindTextAreaBlur' placeholder='请输入公司描述' maxlength='10000' value='{{officialInfo.officialDes}}' />
-                        </view>
-                    </view>
-                </view>
-            </view>
-
-            <view class='myconf-info-item'>
-                <view class='myconf-info-item-left'>
-                    +
-                </view>
-                <view class='myconf-info-item-right'>
-                    <view class='myconf-info-item-right-group'>
-                        <view class='myconf-info-item-right-item'>
-                            <input class='myconf-info-item-right-item-name' placeholder-class='myconf-info-item-right-input-placeholder' type="text" placeholder="请输入电话号" value='{{officialInfo.officialAddress}}' />
-                            <view bindtap='handleMap'>地图</view>
-                        </view>
-                    </view>
-                </view>
-            </view>
-
         </view>
+
+    <button class='submit-bt' form-type='submit' size="defaultSize" hover-class="defaultTap">保存</button>
+    </form>
 	</view>
+
 </view>

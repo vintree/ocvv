@@ -1,4 +1,5 @@
 @import '../../app.wxss';
+@import '../../style/loading.wxss';
 
 .official-list {
     padding: 16rpx;
@@ -98,4 +99,9 @@
     float: right;
     font-size: 33rpx;
     color: #999999;
+}
+
+.official-item-focus {
+    background-color: #E91E63;
+    color: #fff;
 }

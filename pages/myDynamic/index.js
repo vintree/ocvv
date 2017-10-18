@@ -4,7 +4,7 @@ var app = getApp()
 var {
 	api
 } = require('../../config/api.default')
-// import tempObj from '../../tpl/icoItem/index'
+const { request } = require('../../lib/request')
 
 let isRequestGetIcoList = false
 let lockRequestIcoList = false
@@ -121,18 +121,29 @@ Page({
 	},
 	onLoad: function () {
 		var that = this
-		wx.getSystemInfo({
+
+		// dynamicGetList
+		request({
+			key: 'dynamicGetList',
+			data: {},
+			isLogin: true,
 			success: (res) => {
-				console.log('getSystemInfo', res);
-				this.requestGetIcoList({
-					page: this.data.page,
-					pageSize: this.data.pageSize,
-				})
-				this.setData({
-					scrollHeight: res.windowHeight,
-					windowWidth: res.windowWidth
-				})
+				console.log(res)
 			}
-		});
+		})
+
+		// wx.getSystemInfo({
+		// 	success: (res) => {
+		// 		console.log('getSystemInfo', res);
+		// 		this.requestGetIcoList({
+		// 			page: this.data.page,
+		// 			pageSize: this.data.pageSize,
+		// 		})
+		// 		this.setData({
+		// 			scrollHeight: res.windowHeight,
+		// 			windowWidth: res.windowWidth
+		// 		})
+		// 	}
+		// });
 	}
 })

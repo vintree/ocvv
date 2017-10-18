@@ -1,0 +1,16 @@
+<template name="user">
+    <view class='official-item' bindtap="gotoOfficialInfoDetail" data-params='{{item}}'>
+        <view class='official-head' style='background-image: url({{item.officialPic}})'></view>
+        <view class='official-body'>
+            <view class='official-body-t1'>{{item.officialName}}</view>
+            <view class='official-body-t2'>{{item.officialInfoTitle}}</view>
+            <view class='official-body-t3'>{{item.officialInfoCutContent}}</view>
+            <view>
+                <view class='official-body-t4 fleft'>
+                    {{item.officialInfoSupport}} 赞同 · {{item.officialInfoShare}} 分享
+                </view>
+                <text class='official-body-t5 fright'>{{item.createRelative}}</text>
+            </view>
+        </view>
+    </view>
+</template>
