@@ -26,7 +26,7 @@ const apiMap = {
 
 exports.api = (options) => {
     const { key } = options
-    // let host = 'https://api.ico.ieee.top'
-    let host = 'http://127.0.0.1:7001'
+    let host = 'https://api.ico.ieee.top'
+    // let host = 'http://127.0.0.1:7001'
     return host + apiMap[key]
 }

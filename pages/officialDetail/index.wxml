@@ -1,57 +1,86 @@
 <!--index.wxml-->
 
 <view class="container">
-	<view class='official-info'>
-        <view class='official-info-header' style='background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506894664095&di=381c49e6492ae745217c69ecfe50de71&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F15%2F30%2F99%2F15309959-c70d94627f2d4c2fb64b24fafe812113-2.jpg")'>
-            <view class='official-layout'></view>
-            <text class='official-text1'>UG Chain 官方</text>
+	<view class='myconf-info'>
+    <form bindsubmit="formSubmit">
+        <view class='myconf-info-header' style='background-image: url({{officialInfo.officialPic}})'>
+            <image class='myconf-layout' src="../../pic/img-bk.png" />
+            <view class='myconf-text1'>
+                {{officialInfo.officialName}}
+            </view>
         </view>
-        <view class='official-info-area1'>
-            <text class='official-info-area2-1'>11.2K 关注 · 231K 赞同</text>
-            <button class='official-info-area2-2 fright' type="default" size="mini" plain="plain}" disabled="disabled" bindtap="defaultTap" hover-class="defaultTap">已关注</button>
-        </view>
-        <view class='official-info-list'>
-            <view class='official-info-item'>
-                <view class='official-info-item-left'>
-                    +
-                </view>
-                <view class='official-info-item-right'>
-                    <view class='official-info-item-right-group'>
-                        <view class='official-info-item-right-item'>
-                            <view class='official-info-item-right-item-name'>18523021231</view>
-                            <view class='official-info-item-right-item-label'>紧急电话</view>
+        <view class='myconf-info-list'>
+            <view class='myconf-info-item'>
+                <view class='myconf-info-item-left iconfont icon-gongsi1'></view>
+                <view class='myconf-info-item-right'>
+                    <view class='myconf-info-item-right-group'>
+                        <view class='myconf-info-item-right-item'>
+                            <view class='myconf-info-item-right-item-name'>
+                                {{officialInfo.officialFullName}}
+                            </view>
                         </view>
                     </view>
                 </view>
             </view>
 
-            <view class='official-info-item'>
-                <view class='official-info-item-left'>
-                    +
-                </view>
-                <view class='official-info-item-right'>
-                    <view class='official-info-item-right-group'>
-                        <view class='official-info-item-right-item'>
-                            <view class='official-info-item-right-item-name'>18523021231</view>
-                            <view class='official-info-item-right-item-label'>紧急电话</view>
+            <view class='myconf-info-item'>
+                <view class='myconf-info-item-left iconfont icon-youxiang'></view>
+                <view class='myconf-info-item-right'>
+                    <view class='myconf-info-item-right-group'>
+                        <view class='myconf-info-item-right-item'>
+                            <view class='myconf-info-item-right-item-name'>
+                                {{officialInfo.officialEmail}}
+                            </view>
                         </view>
                     </view>
                 </view>
             </view>
 
-            <view class='official-info-item'>
-                <view class='official-info-item-left'>
-                    +
+            <view class='myconf-info-item'>
+                <view class='myconf-info-item-left iconfont icon-dianhua'></view>
+                <view class='myconf-info-item-right'>
+                    <view class='myconf-info-item-right-group'>
+                        <view class='myconf-info-item-right-item'>
+                            <view class='myconf-info-item-right-item-name'>
+                                {{officialInfo.officialPhone}}
+                            </view>
+                        </view>
+                    </view>
                 </view>
-                <view class='official-info-item-right'>
-                    <view class='official-info-item-right-group'>
-                        <view class='official-info-item-right-item'>
-                            <view class='official-info-item-right-item-name'>18523021231</view>
-                            <view class='official-info-item-right-item-label'>紧急电话</view>
+            </view>
+
+            <view class='myconf-info-item'>
+                <view class='myconf-info-item-left iconfont icon-jikediancanicon35'></view>
+                <view class='myconf-info-item-right'>
+                    <view class='myconf-info-item-right-group'>
+                        <view class='myconf-info-item-right-item'>
+                            <view class='myconf-info-item-right-item-name'>
+                                {{officialInfo.officialDes}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class='myconf-info-item'>
+                <view class='myconf-info-item-left iconfont icon-dizhi'></view>
+                <view class='myconf-info-item-right'>
+                    <view class='myconf-info-item-right-group'>
+                        <view class='myconf-info-item-right-item'>
+                            <view class='myconf-info-item-right-item-address' bindtap='handleMap'>
+                                <view class='myconf-info-item-right-item-address-text'>
+                                    {{officialInfo.officialAddress}} · {{officialInfo.officialDoorplate}}
+                                </view>
+                                <view class='my-map fright iconfont icon-dizhi'></view>
+                            </view>
                         </view>
                     </view>
                 </view>
             </view>
         </view>
+
+    <button class='submit-bt' form-type='submit' size="defaultSize" hover-class="defaultTap">保存</button>
+    </form>
 	</view>
+
 </view>

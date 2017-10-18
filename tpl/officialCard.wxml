@@ -25,7 +25,7 @@
 
 
 <template name="officialCard1">
-    <view class='official-item' bindtap="gotoOfficialInfoList" data-params='{{item}}'>
+    <view class='official-item' bindtap="gotoOfficialDetail" data-params='{{item}}'>
         <view class='official-item-header' style='background-image: url({{item.officialPic}})'>
             <image class='official-layout' src="../../pic/img-bk.png" />
             <text class='official-text1'>{{item.officialName}}</text>

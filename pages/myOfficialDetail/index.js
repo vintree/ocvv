@@ -1,10 +1,6 @@
 //index.js
 //获取应用实例
 var app = getApp()
-var {
-	api
-} = require('../../config/api.default')
-const { getEnhanceUserInfo } = require('../../lib/authorize')
 const { request, uploadFile } = require('../../lib/request')
 
 Page({
@@ -27,39 +23,6 @@ Page({
 				})
 			}
 		})
-
-
-		
-
-
-		// getEnhanceUserInfo((wxSessionCode) => {
-		// 	// const code = options.resLogin.code
-		// 	if(code) {
-		// 		wx.chooseImage({
-		// 			count: 1,
-		// 			success: function(res) {
-		// 				var tempFilePaths = res.tempFilePaths
-		// 				console.log('dsds', tempFilePaths);
-		// 				wx.uploadFile({
-		// 					url: 'http://api.ieee.top:7001/rest/official/uploadOfficialPic', //仅为示例，非真实的接口地址
-		// 					header: {
-		// 						'content-type':'multipart/form-data'
-		// 					},
-		// 					filePath: tempFilePaths[0],
-		// 					name: 'file',
-		// 					formData: {
-		// 						code: wxSessionCode
-		// 					},
-		// 					success: function(res){
-		// 						var data = res.data
-		// 						console.log('dddd', res);
-		// 						//do something
-		// 					}
-		// 				})
-		// 			}
-		// 		})
-		// 	}
-		// })
 	},
 	handleMap: function() {
 		wx.chooseLocation({
@@ -76,7 +39,6 @@ Page({
 		})
 	},
 	formSubmit: function(e) {
-		console.log('ddddd');
 		request({
 			key: 'officialSetOfficialInfo',
 			data: {

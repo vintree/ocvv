@@ -22,7 +22,7 @@ Page({
 	},
 	gotoOfficialDetail: function(e) {
         wx.navigateTo({
-            url: `../officialDetail/index`
+            url: `../officialDetail/index?officialId=${this.data.urlParams.officialId}`
         })
 	},
 	gotoOfficialInfoDetail: function(e) {

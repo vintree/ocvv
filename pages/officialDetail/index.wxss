@@ -1,50 +1,59 @@
 @import '../../app.wxss';
 
-.official-list {
+page {
+    background-color: #FAFAFA;
+}
+
+.myconf-list {
     padding: 16rpx;
     overflow: hidden;
 }
 
-.official-info {
+.myconf-info {
     position: relative;
-    background-color: #FAFAFA;
     border-radius: 6rpx;
     overflow: hidden;
 }
 
-.official-info:nth-child(2n) {
+.myconf-info:nth-child(2n) {
     margin-right: 0;
 }
 
-.official-layout {
+.myconf-layout {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    height: 200rpx;
 }
 
-.official-info-header {
+.myconf-info-header {
     position: relative;
     background-repeat: no-repeat;
     background-position: center center;
     height: 250rpx;
+    background-color: #B6B6B6;
 }
 
-.official-text1 {
+.myconf-text1-placeholder {
+    color: #fff;
+}
+
+.myconf-text1 {
     position: absolute;
     bottom: 20rpx;
     left: 20rpx;
     color: #FFFFFF;
     font-size: 48rpx;
+    border-bottom: 1rpx solid #fff;
+    color: #fff;
+    padding: 20rpx 0;
 }
 
-.official-info-body {
+.myconf-info-body {
     padding: 20rpx;
 }
 
-.official-info-area1 {
+.myconf-info-area1 {
     overflow: hidden;
     font-size: 32rpx;
     padding: 0 20rpx;
@@ -52,47 +61,126 @@
     line-height: 110rpx;
 }
 
-.official-info-area2-1 {
+.myconf-info-area2-1 {
     float: left;
     color: #999999;
 }
 
-.official-info-area2-2 {
+.myconf-info-area2-2 {
     float: right;
     color: #FFAB40;
     margin-top: 20rpx;
 }
 
-.official-info-list {
+.myconf-info-list {
     padding: 20rpx 0;
 }
 
-.official-info-item {
+.myconf-info-item {
     display: flex;
     padding: 20rpx 0;
 }
 
-.official-info-item-left {
-    flex: 1;
-    text-align: center;
-}
-
-.official-info-item-right {
-    flex: 4;
-    border-bottom: 1rpx solid #E6E6E6;
-    
-}
-
-.official-info-item-right-item {
+.myconf-info-item:last-child .myconf-info-item-right {
+    border: 0;
     margin-bottom: 40rpx;
 }
 
-.official-info-item-right-item-name {
-    font-size: 42rpx;
-    color: #4D4D4D;
+.myconf-info-item-left {
+    flex: 1;
+    text-align: center;
+    color: #E91E63;
+    font-size: 44rpx;
 }
 
-.official-info-item-right-item-label {
+.myconf-info-item-right {
+    flex: 4;
+    border-bottom: 1rpx solid #E6E6E6;
+    padding-right: 40rpx;
+}
+
+.myconf-info-item-right-item {
+    margin-bottom: 40rpx;
+}
+
+.myconf-info-item-right-item-name {
+    font-size: 42rpx;
+    color: #4D4D4D;
+    /* border-bottom: 1rpx solid #E91E63; */
+    padding: 20rpx 0;
+    width: auto;
+}
+
+.myconf-info-item-right-item-name-area {
+    height: 130rpx;
+}
+
+.myconf-info-item-right-input-placeholder {
+    color: #ACACAC;
+}
+
+.myconf-info-item-right-item-label {
     font-size: 32rpx;
     color: #999999;
+    border-bottom: 1rpx solid #E91E63;
+    padding: 20rpx 0;    
+}
+
+.myconf-upload {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    width: 120rpx;
+    font-size: 54rpx;
+    background-color: #D8D8D8;
+    color: #7D7D7D;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.myconf-userhead {
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.my-map {
+    position: relative;
+    top: 4rpx;
+    color: rgb(100, 214, 65);
+    font-size: 50rpx;
+}
+
+.myconf-info-item-right-item-address {
+    overflow: hidden;
+    font-size:42rpx;
+    color:#4D4D4D;
+    padding:20rpx 0;
+    width:auto;
+}
+
+.myconf-info-item-right-item-address-text {
+    float: left;
+    width: 88%;
+}
+
+.submit-bt {
+    position: fixed;
+    bottom: 40rpx;
+    right: 40rpx;
+    background-color: #E91E63;
+    color: #fff;
+    font-size: 30rpx;
+    border-radius: 80rpx;
+    box-shadow: 0 0 24rpx 0 rgb(133, 133, 133);
+    z-index: 999;
+}
+
+.submit-bt::after {
+    border: 0;
 }
