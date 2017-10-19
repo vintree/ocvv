@@ -3,7 +3,7 @@
 <view class="container">
 	<view class='myconf-info'>
     <form bindsubmit="formSubmit">
-        <view class='myconf-info-header' style='background-image: url({{officialInfo.officialPic}})'>
+        <view class='myconf-info-header' style='background-image: url({{officialInfo.officialPicUrl}})'>
             <image class='myconf-layout' src="../../pic/img-bk.png" />
             <view class='myconf-text1'>
                 {{officialInfo.officialName}}

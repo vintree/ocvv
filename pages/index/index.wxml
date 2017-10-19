@@ -4,18 +4,23 @@
 
 <view class="container">
 
-	<view class='' wx:if='{{officialInfoList.length === 0}}'>
+	<view wx:if='{{officialInfoList.length === 0}}'>
 		<image src="../../pic/undefined.png" />
+		<view class='undefined-text' bindtap="gotoCircleList">
+			点击·前往发现，关注更多官网
+		</view>
 	</view>
 
 	<view class='official-list'>
         <template is="officialInfoCreateCard" wx:for='{{officialInfoList}}' data='{{item}}' wx:key='{{item.officialInfoId}}'></template>
 		<view class='down-last' wx:if='{{isFinish}}'>
-			已加载完！
+			没有更多了...
 		</view>
+		<!--
 		<view class='down-last' wx:if='{{isRequestGetIcoList}}'>
 			正在加载中...
 		</view>
+		-->
 	</view>
 
 </view>

@@ -20,18 +20,24 @@ Page({
             url: `../officialInfoDetail/index?officialInfoId=${params.officialInfoId}`
         })
 	},
+	gotoCircleList: function(e) {
+		console.log('dddss');
+		wx.switchTab({
+            url: `../circleList/index`
+        })
+	},
 	onPullDownRefresh: function() {
 		if(isRequest) return
 		if(!lockRequest) {
 			lockRequest = true
-			this.requestOfficialInto({
+			this.requestRule({
 				page: 1,
 				pageSize: 10,
 				wxScrollType: 'top'
 			})
 		}
 	},
-	requestOfficialInto: function(options) {
+	requestRule: function(options) {
 		const { page, pageSize, wxScrollType } = options
 		if(!this.data.isFinish || wxScrollType === 'top') {
 			isRequest = true
@@ -43,7 +49,7 @@ Page({
 					pageSize: pageSize || 10
 				},
 				success: (res) => {
-					wx.hideToast()
+					wx.hideLoading()
 					if(res.code === 200) {
 						const _officialInfoList = res.data.officialInfoList
 						if(wxScrollType === 'top') {
@@ -75,7 +81,7 @@ Page({
 	onReachBottom: function(e) {
 		if(isRequest) return
 		if(!lockRequest) {
-			this.requestOfficialInto({
+			this.requestRule({
 				page: this.data.page + 1,
 				pageSize: this.data.pageSize
 			})
@@ -86,7 +92,7 @@ Page({
 			title: '加载中...',
 			mask: true
 		})
-		this.requestOfficialInto({
+		this.requestRule({
 			page: this.data.page,
 			pageSize: this.data.pageSize,
 		})

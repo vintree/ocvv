@@ -89,6 +89,7 @@ Page({
 				}
 			})
 		}
+		wx.hideLoading()
 	},
 	onReachBottom: function(e) {
 		if(isRequest) return
@@ -107,7 +108,10 @@ Page({
 			page: 1, 
 			pageSize: 10,
 		})
-
+		wx.showLoading({
+			title: '加载中...',
+			mask: true
+		})
 		request({
 			key: 'officialGetOfficialDetail',
 			data: {

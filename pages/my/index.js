@@ -31,8 +31,11 @@ Page({
         })
 	},
 	onLoad: function (req) {
+		wx.showLoading({
+			title: '加载中...',
+			mask: true
+		})
 		getEnhanceUserInfo((wxSessionCode, userInfo) => {
-			console.log('into getEnhanceUserInfo');
 			request({
 				key: 'userValid',
 				data: {
@@ -40,7 +43,6 @@ Page({
 				},
 				isLogin: true,
 				success: (res) => {
-					console.log('into userValid');
 					if(res.code === 200) {
 						this.setData({
 							userInfo: {
@@ -48,7 +50,6 @@ Page({
 								...res.data.userInfo
 							}
 						})
-
 						if(res.data.userInfo.officialId) {
 							request({
 								key: 'officialGetOfficialDetail',
@@ -68,11 +69,11 @@ Page({
 					}
 				},
 				fial: () => {
-					console.log('into userValid fail');					
 				}
 			})
+			wx.hideLoading()
 		}, (res) => {
-			console.log('dddsss');
+			wx.hideLoading()
 		})
 	}
 })

@@ -135,7 +135,10 @@ Page({
 		this.setData({
 			urlParams: req
 		})
-
+		wx.showLoading({
+			title: '加载中...',
+			mask: true
+		})
 		getEnhanceUserInfo((wxSessionCode) => {
 			wx.request({
 				url: api({
@@ -154,6 +157,7 @@ Page({
 							isOfficialInfoSupport
 						})
 					}
+					wx.hideLoading()
 				}
 			})
 		})

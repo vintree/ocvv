@@ -26,11 +26,11 @@
         <view class='official-msg-detail-footer'>
             <view class='official-msg-ico-list'>
                 <view class='official-msg-ico-item' bindtap='gotoSend'>
-                    <view class='official-msg-ico-item-icon iconfont icon-xingzhuang'></view>
+                    <view class='official-msg-ico-item-icon iconfont icon-bianji'></view>
                     <view class='official-msg-ico-item-text'>编辑</view>
                 </view>
                 <view class='official-msg-ico-item' bindtap='handleDelete'>
-                    <view class='official-msg-ico-item-icon iconfont icon-xingzhuang'></view>
+                    <view class='official-msg-ico-item-icon iconfont icon-shanchu'></view>
                     <view class='official-msg-ico-item-text'>删除</view>
                 </view>
             </view>

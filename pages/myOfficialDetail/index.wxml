@@ -3,9 +3,8 @@
 <view class="container">
 	<view class='myconf-info'>
     <form bindsubmit="formSubmit">
-        <view class='myconf-info-header' style='background-image: url({{officialInfo.officialPic}})'>
+        <view class='myconf-info-header' style='background-image: url({{officialInfo.officialPicUrl}})'>
             <image class='myconf-layout' src="../../pic/img-bk.png" />
-            <image class='myconf-userhead' src='{{officialInfo.officialPic}}' />
             <view class='myconf-upload iconfont icon-jia' bindtap="uploadPic"></view>
             <input class='myconf-text1' placeholder-class='myconf-text1-placeholder' type="text" placeholder="请输入名称" name='officialName' value='{{officialInfo.officialName}}' />
         </view>

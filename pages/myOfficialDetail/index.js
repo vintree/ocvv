@@ -5,20 +5,29 @@ const { request, uploadFile } = require('../../lib/request')
 
 Page({
 	data: {
-		officialInfo: {}
+		officialInfo: {},
+		urlParams: {}
 	},
 	uploadPic: function() {
 		wx.chooseImage({
 			count: 1,
-			success: function(res) {
+			success: (res) => {
 				const tempFilePaths = res.tempFilePaths
 				uploadFile({
 					key: 'officialUploadOfficialPic',
-					data: {},
+					data: {
+						officialId: this.data.urlParams.officialId
+					},
 					filePath: tempFilePaths[0],
 					isLogin: true,
 					success: (res) => {
-						console.log('res'. res);
+						if(res.code === 200) {
+							const officialInfo = this.data.officialInfo
+							officialInfo.officialPicUrl = res.data.officialPicUrl
+							this.setData({
+								officialInfo
+							})
+						}
 					}
 				})
 			}
@@ -27,7 +36,6 @@ Page({
 	handleMap: function() {
 		wx.chooseLocation({
 			success: (req) => {
-				console.log('req', req);
 				const officialInfo = this.data.officialInfo
 				officialInfo.officialLat = req.latitude
 				officialInfo.officialLog = req.longitude
@@ -39,6 +47,10 @@ Page({
 		})
 	},
 	formSubmit: function(e) {
+		wx.showLoading({
+			title: '加载更多...',
+			mask: true
+		})
 		request({
 			key: 'officialSetOfficialInfo',
 			data: {
@@ -48,16 +60,28 @@ Page({
 			isLogin: true,
 			success: (res) => {
 				if(res.code === 200) {
-					if(res.code.success) {
-						// wx.redirectTo({
-							// url: `../my/index`
-						// })
+					wx.hideLoading()
+					if(res.data.success) {
+						wx.showToast({
+							title: '更新成功',
+							icon: 'success',
+							duration: 1200,
+							mask: true
+						})
 					}
+				} else {
+					wx.hideLoading()
 				}
+			},
+			fail: () => {
+				wx.hideLoading()
 			}
 		})
 	},
 	onLoad: function (req) {
+		this.setData({
+			urlParams: req
+		})
 		request({
 			key: 'officialGetOfficialDetail',
 			data: {

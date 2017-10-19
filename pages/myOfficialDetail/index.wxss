@@ -134,8 +134,8 @@ page {
     line-height: 120rpx;
     width: 120rpx;
     font-size: 54rpx;
-    background-color: #D8D8D8;
-    color: #7D7D7D;
+    background-color: #E91E63;
+    color: #fff;
     text-align: center;
     border-radius: 50%;
 }

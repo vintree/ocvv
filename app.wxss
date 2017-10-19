@@ -1,6 +1,6 @@
 /**app.wxss**/
 @import './style/iconfont.wxss';
-
+@import './style/loading.wxss';
 page {
 	box-sizing: content-box;	
 	background-color: #E2E2E2;
@@ -50,5 +50,11 @@ view, scroll-view, swiper, movable-area, cover-view {
 }
 
 .color999 {
+	color: #999;
+}
+
+.undefined-text {
+	text-align: center;
+	margin-top: 10px;
 	color: #999;
 }

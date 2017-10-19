@@ -26,22 +26,22 @@ Page({
         })
 	},
 	handleOfficialFocus: function(e) {
-		const { params } = e.currentTarget.dataset
-		getEnhanceUserInfo((wxSessionCode) => {
-			wx.request({
-				url: api({
-					key: 'dynamicFocus'
-				}),
-				data: {
-					officialId: params.officialId,
-					wxSessionCode
-				},
-				success: (req) => {
-					console.log('ssss', req);
-				}
-			})
+		const { params, index } = e.currentTarget.dataset
+		console.log('index', index);
+		request({
+			key: 'dynamicFocus',
+			data: {
+				officialId: params.officialId
+			},
+			isLogin: true,
+			success: (res) => {
+				const officialList = this.data.officialList
+				officialList[index].isOfficialFocus = res.data.isOfficialFocus
+				this.setData({
+					officialList
+				})
+			}
 		})
-		e.stopPropagation()
 	},
 	onPullDownRefresh: function() {
 		if(isRequest) return
@@ -105,10 +105,15 @@ Page({
 				}
 			})
 		}
+		wx.hideLoading()
 	},
-	onLoad: function (req) {
+	onLoad: function (res) {
+		wx.showLoading({
+			title: '加载中...',
+			mask: true
+		})
 		this.setData({
-			urlParams: req
+			urlParams: res
 		})
 		this.requestRule({
 			page: 1,

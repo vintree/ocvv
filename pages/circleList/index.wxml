@@ -16,7 +16,7 @@
         <!--
 		<template is="icoItem" data='{{icoList}}'></template>
 		<view class='down-last' wx:if='{{isFinish}}'>
-			已加载完！
+			没有更多了...
 		</view>
 		<view class='down-last' wx:if='{{isRequestGetIcoList}}'>
 			正在加载中...

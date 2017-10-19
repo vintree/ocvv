@@ -9,7 +9,7 @@
             <view class='official-body-t3'>{{item.content}}</view>
             <view>
                 <view class='official-body-t4 fleft'>
-                    {{item.good}} 赞同 · 关注官方
+                    {{item.officialFullSupport}} 赞同
                 </view>
                 <view class='official-body-t5 fright'>
                     {{item.createBeforeCN}}

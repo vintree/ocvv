@@ -13,7 +13,7 @@
 
 <template name="officialInfoCreateCard">
     <view class='official-item' bindtap="gotoOfficialInfoDetail" data-params='{{item}}'>
-        <view class='official-head' style='background-image: url({{item.officialPic}})'></view>
+        <view class='official-head' style='background-image: url({{item.officialPicUrl}})'></view>
         <view class='official-body'>
             <view class='official-body-t1'>{{item.officialName}}</view>
             <view class='official-body-t2'>{{item.officialInfoTitle}}</view>

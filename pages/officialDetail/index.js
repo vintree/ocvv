@@ -26,9 +26,15 @@ Page({
 	},
 	handleMap: function() {
 		wx.openLocation({
-			latitude: Number(this.data.officialInfo.lat),
-			longitude: Number(this.data.officialInfo.log),
-			scale: 28
+			latitude: Number(this.data.officialInfo.officialLat),
+			longitude: Number(this.data.officialInfo.officialLog),
+			scale: 28,
+			success: (res) => {
+				console.log('s', res);
+			},
+			fail: (res) => {
+				console.log('f', res);
+			}
 		})
 	},
 	formSubmit: function(e) {
@@ -41,16 +47,23 @@ Page({
 			isLogin: true,
 			success: (res) => {
 				if(res.code === 200) {
-					if(res.code.success) {
-						// wx.redirectTo({
-							// url: `../my/index`
-						// })
+					console.log('dadsddasds');
+					if(res.data.success) {
+						wx.showToast({
+							title: '更新成功',
+							icon: 'success',
+							duration: 1200
+						})
 					}
 				}
 			}
 		})
 	},
 	onLoad: function (req) {
+		wx.showLoading({
+			title: '加载中...',
+			mask: true
+		})
 		request({
 			key: 'officialGetOfficialDetail',
 			data: {
@@ -63,6 +76,7 @@ Page({
 						officialInfo: res.data.officialInfo
 					})
 				}
+				wx.hideLoading()
 			}
 		})
 	}
