@@ -13,7 +13,7 @@
 
 	<view class='official-list'>
         <template is="officialInfoCreateCard" wx:for='{{officialInfoList}}' data='{{item}}' wx:key='{{item.officialInfoId}}'></template>
-		<view class='down-last' wx:if='{{isFinish}}'>
+		<view class='down-last' wx:if='{{isFinish && officialInfoList.length !== 0}}'>
 			没有更多了...
 		</view>
 		<!--

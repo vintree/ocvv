@@ -44,24 +44,22 @@
                     </view>
                 </view>
             </view>
-
-            <view class='my-func' wx:else>
-                <!--
-                <view class='my-func-item' bindtap='gotoMyDynamic'>
-                    <view class='my-func-item-area2'>
-                        全部动态
-                        <view class='color999 iconfont icon-you fright'></view>
-                    </view>
+        </view>
+        <view class='my-func' wx:else>
+            <!--
+            <view class='my-func-item' bindtap='gotoMyDynamic'>
+                <view class='my-func-item-area2'>
+                    全部动态
+                    <view class='color999 iconfont icon-you fright'></view>
                 </view>
-                -->
-                <view class='my-func-item' bindtap='gotoMyOfficialApply'>
-                    <view class='my-func-item-area2'>
-                        申请官方
-                        <view class='color999 iconfont icon-you fright'></view>                    
-                    </view>
+            </view>
+            -->
+            <view class='my-func-item' bindtap='gotoMyOfficialApply'>
+                <view class='my-func-item-area2'>
+                    申请官方
+                    <view class='color999 iconfont icon-you fright'></view>                    
                 </view>
             </view>
         </view>
-
 	</view>
 </view>
