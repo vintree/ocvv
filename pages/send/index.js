@@ -8,6 +8,7 @@
 var app = getApp()
 var { api } = require('../../config/api.default')
 const { getEnhanceUserInfo } = require('../../lib/authorize')
+const { request } = require('../../lib/request')
 
 Page({
 	data: {
@@ -29,65 +30,108 @@ Page({
 		const data = {
 			officialInfoId: this.data.urlParams.officialInfoId,
 			officialInfoTitle: title,
-			officialInfoContent: content
+			officialInfoContent: content,
+			wxPage: 'pages/officialInfoDetail/index',
+			wxWidth: 200
 		}
 
-		getEnhanceUserInfo((wxSessionCode) => {
-			// const code = options.resLogin.code
-			data.wxSessionCode = wxSessionCode
-
-			wx.showLoading({
-				title: '正在发布中...',
-				mask: true
-			})
-			wx.request({
-				url: api({
-					key: key
-				}),
-				data: data,
-				success: (req) => {
-					wx.hideLoading()
-					if(req.data.code === 200) {
-						wx.showToast({
-							title: '发布成功',
-							icon: 'success',
-							duration: 1000,
-							mask: true,
-							success: () => {
-								if(officialInfoId) {
-									wx.navigateTo({
-										url: `../officialInfoDetail/index?officialInfoId=${officialInfoId}`
-									})
-								} else {
-									wx.navigateTo({
-										url: `../officialInfoDetail/index?officialInfoId=${req.data.data.officialInfoId}`
-									})
-								}
-							}
-						})
-					} else {
-						wx.showToast({
-							title: '发布失败',
-							icon: 'error',
-							duration: 1000,
-							mask: true,
-							success: () => {}
-						})
-					}
-				}
-			})
+		wx.showLoading({
+			title: '正在发布中...',
+			mask: true
 		})
+		
+		request({
+			key: key,
+			data: data,
+			isLogin: true,
+			success: (res) => {
+				wx.hideLoading()
+				if(res.code === 200) {
+					wx.showToast({
+						title: '发布成功',
+						icon: 'success',
+						duration: 1000,
+						mask: true,
+						success: () => {
+							if(officialInfoId) {
+								wx.navigateTo({
+									url: `../officialInfoDetail/index?officialInfoId=${officialInfoId}`
+								})
+							} else {
+								wx.navigateTo({
+									url: `../officialInfoDetail/index?officialInfoId=${res.data.officialInfoId}`
+								})
+							}
+						}
+					})
+				} else {
+					wx.showToast({
+						title: '发布失败',
+						icon: 'error',
+						duration: 1000,
+						mask: true,
+						success: () => {}
+					})
+				}
+			}
+		})
+
+		// getEnhanceUserInfo((wxSessionCode) => {
+		// 	// const code = options.resLogin.code
+		// 	data.wxSessionCode = wxSessionCode
+
+		// 	wx.showLoading({
+		// 		title: '正在发布中...',
+		// 		mask: true
+		// 	})
+		// 	wx.request({
+		// 		url: api({
+		// 			key: key
+		// 		}),
+		// 		data: data,
+		// 		success: (res) => {
+		// 			wx.hideLoading()
+		// 			if(res.data.code === 200) {
+		// 				wx.showToast({
+		// 					title: '发布成功',
+		// 					icon: 'success',
+		// 					duration: 1000,
+		// 					mask: true,
+		// 					success: () => {
+		// 						if(officialInfoId) {
+		// 							wx.navigateTo({
+		// 								url: `../officialInfoDetail/index?officialInfoId=${officialInfoId}`
+		// 							})
+		// 						} else {
+		// 							wx.navigateTo({
+		// 								url: `../officialInfoDetail/index?officialInfoId=${res.data.data.officialInfoId}`
+		// 							})
+		// 						}
+		// 					}
+		// 				})
+		// 			} else {
+		// 				wx.showToast({
+		// 					title: '发布失败',
+		// 					icon: 'error',
+		// 					duration: 1000,
+		// 					mask: true,
+		// 					success: () => {}
+		// 				})
+		// 			}
+		// 		}
+		// 	})
+		// })
 	},
     gotoSendConf: function(e) {
         wx.navigateTo({
             url: `../sendConf/index`
         })
     },
-	onLoad: function (req) {
+	onLoad: function (res) {
 		this.setData({
-			urlParams: req
+			urlParams: res
 		})
-		const { officialInfoId } = req
+		const { officialInfoId } = res
 		if(officialInfoId) {
 			wx.showLoading({
 				title: '加载中',
@@ -102,13 +146,13 @@ Page({
 						wxSessionCode,
 						officialInfoId
 					},
-					success: (req) => {
+					success: (res) => {
 						wx.hideLoading()
-						console.log('req', req);
-						if(req.data.code === 200) {
+						console.log('res', res);
+						if(res.data.code === 200) {
 							this.setData({
-								officialInfoTitle: req.data.data.officialInfo.officialInfoTitle,
-								officialInfoContent: req.data.data.officialInfo.officialInfoContent
+								officialInfoTitle: res.data.data.officialInfo.officialInfoTitle,
+								officialInfoContent: res.data.data.officialInfo.officialInfoContent
 							})
 						} else {
 							wx.showToast({

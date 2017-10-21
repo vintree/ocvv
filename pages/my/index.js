@@ -7,11 +7,17 @@ const { request } = require('../../lib/request')
 Page({
 	data: {
 		userInfo: {},
-		officialInfo: {}
+		officialInfo: {},
+		isFinish: false
 	},
 	gotoMyOfficialDetail: function() {
 		wx.navigateTo({
             url: `../myOfficialDetail/index?officialId=${this.data.userInfo.officialId}`
+        })
+	},
+	gotoMyOfficialApply: function() {
+		wx.navigateTo({
+            url: `../myOfficialApply/index`
         })
 	},
     gotoSend: function(e) {

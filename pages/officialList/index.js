@@ -10,7 +10,8 @@ let isRequest = false
 let lockRequest = false
 Page({
 	data: {
-		officialList: []
+		officialList: [],
+		isFinish: false		
 	},
     gotoOfficialAll: function(e) {
         wx.navigateTo({

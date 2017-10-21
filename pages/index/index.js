@@ -96,5 +96,34 @@ Page({
 			page: this.data.page,
 			pageSize: this.data.pageSize,
 		})
+
+		// wx.request({
+		// 	// 获取token
+		// 	url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential',
+		// 	data: {
+		// 	  appid: 'wx826671981dcd4102',
+		// 	  secret: 'b71b176fe5bad33328bef2e9edcc4f76'
+		// 	},
+		// 	success: (res) => {
+		// 	  wx.request({
+		// 		// 调用接口C
+		// 		url: 'https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token=' + res.data.access_token,
+		// 		method: 'POST',
+		// 		data: {
+		// 		  "path": "pages/meiTuan/meiTuan",
+		// 		  "width": 430
+		// 		},
+		// 		success: (res) => {
+		// 			console.log('sss', res);
+		// 			this.setData({
+		// 				qrcode: res.data
+		// 			})
+		// 		  // res是二进制流，后台获取后，直接保存为图片，然后将图片返回给前台
+		// 		  // 后台二进制怎么转图片？我也不会后台，学会了再贴代码
+		// 		}
+		// 	  })
+		// 	}
+		//   })
+
 	}
 })

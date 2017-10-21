@@ -9,6 +9,7 @@
     "pages/officialInfoDetailShare/index",
     "pages/my/index",
     "pages/myOfficialDetail/index",
+    "pages/myOfficialApply/index",
     "pages/myDynamic/index",
     "pages/myOfficialInfoList/index",
     "pages/myOfficialInfoDetail/index",

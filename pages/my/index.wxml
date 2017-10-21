@@ -23,40 +23,45 @@
                     <text class='my-item-area2-1'>{{officialInfo.officialFocus}} 关注 · {{officialInfo.officialFullSupport}} 赞同 · {{officialInfo.officialFullShare}} 分享</text>
                     <text class='my-item-area2-3 iconfont icon-you'></text>
                 </view>
-            </view>
-        </view>
-
-        <view class='my-func' wx:if='{{!!userInfo.officialId}}'>
-            <view class='my-func-item' bindtap='gotoSend'>
-                <view class='my-func-item-area2'>
-                    创建消息
-                    <view class='color999 iconfont icon-you fright'></view>
-                </view>
-            </view>
-            <view class='my-func-item' bindtap='gotoMyOfficialInfoList'>
-                <view class='my-func-item-area2'>
-                    消息列表
-                    <view class='color999 iconfont icon-you fright'></view>                    
+                <view class='my-item-area2' wx:if='{{!!userInfo.officialId && !officialInfo.isActive}}'>
+                    申请成功，正在审核中
                 </view>
             </view>
         </view>
 
-        <view class='my-func' wx:else>
-            <!--
-            <view class='my-func-item' bindtap='gotoMyDynamic'>
-                <view class='my-func-item-area2'>
-                    全部动态
-                    <view class='color999 iconfont icon-you fright'></view>
+        <view wx:if='{{userInfo.officialId && officialInfo.isActive}}'>
+            <view class='my-func' wx:if='{{!!userInfo.officialId}}'>
+                <view class='my-func-item' bindtap='gotoSend'>
+                    <view class='my-func-item-area2'>
+                        创建消息
+                        <view class='color999 iconfont icon-you fright'></view>
+                    </view>
+                </view>
+                <view class='my-func-item' bindtap='gotoMyOfficialInfoList'>
+                    <view class='my-func-item-area2'>
+                        消息列表
+                        <view class='color999 iconfont icon-you fright'></view>                    
+                    </view>
                 </view>
             </view>
-            
-            <view class='my-func-item'>
-                <view class='my-func-item-area2'>
-                    申请官方
-                    <view class='color999 iconfont icon-you fright'></view>                    
+
+            <view class='my-func' wx:else>
+                <!--
+                <view class='my-func-item' bindtap='gotoMyDynamic'>
+                    <view class='my-func-item-area2'>
+                        全部动态
+                        <view class='color999 iconfont icon-you fright'></view>
+                    </view>
+                </view>
+                -->
+                <view class='my-func-item' bindtap='gotoMyOfficialApply'>
+                    <view class='my-func-item-area2'>
+                        申请官方
+                        <view class='color999 iconfont icon-you fright'></view>                    
+                    </view>
                 </view>
             </view>
-            -->
         </view>
+
 	</view>
 </view>

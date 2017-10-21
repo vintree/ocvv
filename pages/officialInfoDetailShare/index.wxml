@@ -23,7 +23,7 @@
                 </scroll-view>
 
                 <view class='official-msg-detail-share'>
-                    <image class='official-msg-detail-qrcode' src="../../pic/qrcode.jpg" />
+                    <image class='official-msg-detail-qrcode' src="{{officialInfo.officialInfoWXQrcodePicUrl}}" />
                     <view class='official-msg-detail-text'>截图 · 长按识别二维码查看全部信息</view>
                 </view>
             </view>

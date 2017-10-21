@@ -12,7 +12,7 @@
 
         <template is="officialCard" wx:for='{{officialList}}' wx:key='{{item.officialId}}' data='{{item, index}}'></template>
 
-		<view class='down-last' wx:if='{{officialList}}'>
+		<view class='down-last' wx:if='{{isFinish && officialList.length !== 0}}'>
 			没有更多了...
 		</view>
 		<!--
