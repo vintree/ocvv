@@ -1,10 +1,6 @@
 //index.js
 //获取应用实例
 
-// const Promise = global.Promise = require('../../lib/es6-promise.min')
-// const regeneratorRuntime = global.regeneratorRuntime = require('../../lib/regenerator-runtime')
-// const co = require('../../lib/co')
-
 var app = getApp()
 var { api } = require('../../config/api.default')
 const { getEnhanceUserInfo } = require('../../lib/authorize')

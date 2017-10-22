@@ -22,19 +22,19 @@
 				},
 				{
 					"id": 1,
-					"name": "官方信息列表",
+					"name": "官方消息列表",
 					"pathName": "pages/officialInfoList/index",
 					"query": "officialId=59dbbd2651e8a32a8c280074"
 				},
 				{
 					"id": 2,
-					"name": "官方信息详情",
+					"name": "官方消息详情",
 					"pathName": "pages/officialInfoDetail/index",
 					"query": "officialInfoId=59ec254a95034513b6fb46cf"
 				},
 				{
 					"id": 3,
-					"name": "官方信息",
+					"name": "官方消息",
 					"pathName": "pages/officialDetail/index",
 					"query": "officialId=59dbbd2651e8a32a8c280074"
 				},
@@ -94,7 +94,7 @@
 				},
 				{
 					"id": -1,
-					"name": "官方信息详情",
+					"name": "官方消息详情",
 					"pathName": "pages/myOfficialInfoDetail/index",
 					"query": "officialId=59dbbd2651e8a32a8c280074&officialInfoTitle=天猫事业部-同时&officialInfoSupport=0&officialInfoShare=0&isShow=true&isActive=true&isDelete=false&update=1508052115000&create=1507572911000&officialInfoId=59e3093962381a0241114e62&officialInfoCutContent=年底啊大海风流史法萨芬接口李芳静安寺&createRelative=21 分钟前&createFull=2017年10月15日 15:07&officialName=天猫官方&officialDes=汇聚天下商品，24小时通行天下&officialPicUrl=https://timgsa.baidu.com/timg"
 				},

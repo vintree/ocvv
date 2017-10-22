@@ -19,7 +19,7 @@
   "window": {
     "navigationBarBackgroundColor": "#E91E63",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "官方信息",
+    "navigationBarTitleText": "官方消息",
     "backgroundColor": "#E2E2E2",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true,

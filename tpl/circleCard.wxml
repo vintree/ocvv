@@ -1,7 +1,7 @@
 <!-- icoList/index.wxml -->
 
 <template name="circleCard">
-    <view class='group-item' bindtap="gotoOfficialList" data-circleId='{{item.circleId}}' style='background-image: url({{item.circlePic}})'>
+    <view class='group-item' bindtap="gotoOfficialList" data-circleId='{{item.circleId}}' style='background-image: url({{item.circlePicUrl}})'>
         <view class='group-layout'></view>
         <text class='group-text1'>{{item.circleName}}</text>
         <text class='group-text2'>{{item.circleNameEN}}</text>
