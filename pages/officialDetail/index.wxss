@@ -32,6 +32,7 @@ page {
     background-position: center center;
     height: 250rpx;
     background-color: #B6B6B6;
+    background-size:cover;    
 }
 
 .myconf-text1-placeholder {

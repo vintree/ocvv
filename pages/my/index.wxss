@@ -29,6 +29,7 @@ page {
     background-repeat: no-repeat;
     background-position: center center;
     height: 250rpx;
+    background-size:cover;
 }
 
 .my-item-header.my-person {
