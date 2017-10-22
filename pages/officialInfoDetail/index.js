@@ -19,15 +19,15 @@ Page({
 		isOneself: false
 	},
 	onShareAppMessage: function(res) {
+		let { officialInfo, urlParams, official } = this.data
 		if (res.from === 'button') {
 			// 来自页面内转发按钮
 			console.log(res.target)
 		}
 		return {
-			title: this.data.official.officialName,
-			path: `/pages/officialInfoDetail?officialInfoId=${this.data.urlParams.officialInfoId}`,
+			title: official.officialName + ' · 官方消息',
+			path: `pages/officialInfoDetail?officialInfoId=${urlParams.officialInfoId}`,
 			success: (res) => {
-				let { officialInfo, urlParams } = this.data
 				officialInfo.officialInfoShare = officialInfo.officialInfoShare++
 				this.setData({
 					officialInfo: officialInfo
@@ -35,12 +35,12 @@ Page({
 				request({
 					key: 'dynamicInfoShare',
 					data: {
-						officialInfoId: urlParams.officialInfoId
+						officialInfoId: urlParams.officialInfoId,
+						officialId: official.officialId
 					},
 					isLogin: true,
 					success: (res) => {
 						if(res.code === 200) {
-							console.log('res', res);
 							officialInfo.officialInfoShare = res.data.officialInfoShare
 							this.setData({
 								officialInfo
@@ -56,7 +56,7 @@ Page({
 		}
 	},
 	handleSupport: function() {
-		let { officialInfo, urlParams } = this.data
+		let { officialInfo, urlParams, official } = this.data		
 		officialInfo.officialInfoSupport = officialInfo.officialInfoSupport + 1
 		if(this.data.isOfficialInfoSupport) return
 
@@ -67,7 +67,8 @@ Page({
 		request({
 			key: 'dynamicInfoSupport',
 			data: {
-				officialInfoId: urlParams.officialInfoId
+				officialInfoId: urlParams.officialInfoId,
+				officialId: official.officialId
 			},
 			isLogin: true,
 			success: (res) => {
@@ -95,23 +96,37 @@ Page({
 			itemColor: '#FF0000',
 			success: (res) => {
 				if(res.tapIndex === 0) {
-					getEnhanceUserInfo((wxSessionCode) => {
-						// const code = options.resLogin.code
-						wx.request({
-							url: api({
-								key: 'infoDelete'
-							}),
-							data: {
-								wxSessionCode,
-								officialInfoId: this.data.urlParams.officialInfoId
-							},
-							success: (req) => {
-								wx.redirectTo({
-									url: `../myOfficialInfoList/index?officialId=${this.data.urlParams.officialId}`
-								})
-							}
-						})
+					request({
+						key: 'infoDelete',
+						data: {
+							officialInfoId: this.data.urlParams.officialInfoId
+						},
+						isLogin: true,
+						success: (res) => {
+							wx.redirectTo({
+								url: `../myOfficialInfoList/index?officialId=${this.data.urlParams.officialId}`
+							})
+						}
 					})
+
+
+					// getEnhanceUserInfo((wxSessionCode) => {
+					// 	// const code = options.resLogin.code
+					// 	wx.request({
+					// 		url: api({
+					// 			key: 'infoDelete'
+					// 		}),
+					// 		data: {
+					// 			wxSessionCode,
+					// 			officialInfoId: this.data.urlParams.officialInfoId
+					// 		},
+					// 		success: (req) => {
+					// 			wx.redirectTo({
+					// 				url: `../myOfficialInfoList/index?officialId=${this.data.urlParams.officialId}`
+					// 			})
+					// 		}
+					// 	})
+					// })
 				}
 			},
 			fail: function(res) {
