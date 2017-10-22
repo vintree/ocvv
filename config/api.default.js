@@ -6,6 +6,7 @@ const apiMap = {
     infoGet: '/rest/official/info/get',
     infoDelete: '/rest/official/info/delete',
     infoGetOfficialAndOfficialInfoList: '/rest/official/info/getOfficialAndOfficialInfoList',
+    infoGetUserFocusOfficialInfoList: '/rest/official/info/getUserFocusOfficialInfoList',
     infoGetOfficialInfoList: '/rest/official/info/getOfficialInfoList',
     infoSetOfficialInfo: '/rest/official/info/setOfficialInfo',
     getTimeList: '/rest/official/info/getTimeList',
@@ -27,7 +28,7 @@ const apiMap = {
 
 exports.api = (options) => {
     const { key } = options
-    // let host = 'https://api.ico.ieee.top'
-    let host = 'http://127.0.0.1:7001'
+    let host = 'https://api.ico.ieee.top'
+    // let host = 'http://127.0.0.1:7001'
     return host + apiMap[key]
 }

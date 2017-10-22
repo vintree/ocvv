@@ -32,7 +32,7 @@
 
         <view class='official-msg-detail-footer'>
             <view class='official-msg-ico-list'>
-                <view class="official-msg-ico-item {{isOfficialInfoSupport ? 'active' : ''}}" bindtap='handleSupport'>
+                <view class="official-msg-ico-item" bindtap='handleSupport'>
                     <view class='official-msg-ico-item-icon iconfont icon-zan'></view>
                     <view class='official-msg-ico-item-text'>赞 {{officialInfo.officialInfoSupport}}</view>
                 </view>

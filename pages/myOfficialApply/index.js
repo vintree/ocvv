@@ -118,7 +118,13 @@ Page({
 							success: () => {
 								console.log('sssdd');
 								wx.switchTab({
-									url: '../my/index'
+									url: '../my/index',
+									success: (e) => {
+										// tab切换刷新
+										let page = getCurrentPages().pop();  
+										if (page == undefined || page == null) return;  
+										page.onLoad();  
+									}
 								})
 							}
 						})

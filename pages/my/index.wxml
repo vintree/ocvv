@@ -45,7 +45,8 @@
                 </view>
             </view>
         </view>
-        <view class='my-func' wx:else>
+
+        <view class='my-func' wx:if='{{!userInfo.officialId}}'>
             <!--
             <view class='my-func-item' bindtap='gotoMyDynamic'>
                 <view class='my-func-item-area2'>

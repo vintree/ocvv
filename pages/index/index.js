@@ -43,7 +43,7 @@ Page({
 			isRequest = true
 			let officialInfoList = this.data.officialInfoList
 			request({
-				key: 'infoGetOfficialInfoList',
+				key: 'infoGetUserFocusOfficialInfoList',
 				data: {
 					page: page || 1,
 					pageSize: pageSize || 10
