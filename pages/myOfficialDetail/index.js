@@ -68,6 +68,15 @@ Page({
 							duration: 1200,
 							mask: true
 						})
+						wx.switchTab({
+							url: '../my/index',
+							success: (e) => {
+								// tab切换刷新
+								let page = getCurrentPages().pop();  
+								if (page == undefined || page == null) return;  
+								page.onLoad();  
+							}
+						})
 					}
 				} else {
 					wx.hideLoading()

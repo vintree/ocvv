@@ -39,6 +39,10 @@
                     <view class='official-msg-ico-item-icon iconfont icon-gongsi1'></view>
                     <view class='official-msg-ico-item-text'>官方</view>
                 </view>
+                <view class='official-msg-ico-item' bindtap='handleMore' wx:if='{{isOneself}}'>
+                    <view class='official-msg-ico-item-icon iconfont icon-gengduo'></view>
+                    <view class='official-msg-ico-item-text'>更多</view>
+                </view>
             </view>
         </view>
 

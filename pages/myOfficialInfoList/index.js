@@ -24,7 +24,7 @@ Page({
 			...this.data.official
 		}
         wx.navigateTo({
-            url: `../myOfficialInfoDetail/index${urlx.stringify(params, true)}`
+            url: `../officialInfoDetail/index${urlx.stringify(params, true)}`
         })
 	},
 	onPullDownRefresh: function() {

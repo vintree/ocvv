@@ -15,7 +15,8 @@ Page({
 	data: {
 		officialInfo: {},
 		isOfficialInfoSupport: false,
-		urlParams: {}
+		urlParams: {},
+		isOneself: false
 	},
 	onShareAppMessage: function(res) {
 		if (res.from === 'button') {
@@ -83,6 +84,60 @@ Page({
 			}
 		})
 	},
+	gotoSend: function(e) {
+		wx.navigateTo({
+            url: `../send/index?officialInfoId=${this.data.officialInfo.officialInfoId}`
+        })
+	},
+	handleDelete: function(e) {
+		wx.showActionSheet({
+			itemList: ['删除'],
+			itemColor: '#FF0000',
+			success: (res) => {
+				if(res.tapIndex === 0) {
+					getEnhanceUserInfo((wxSessionCode) => {
+						// const code = options.resLogin.code
+						wx.request({
+							url: api({
+								key: 'infoDelete'
+							}),
+							data: {
+								wxSessionCode,
+								officialInfoId: this.data.urlParams.officialInfoId
+							},
+							success: (req) => {
+								wx.redirectTo({
+									url: `../myOfficialInfoList/index?officialId=${this.data.urlParams.officialId}`
+								})
+							}
+						})
+					})
+				}
+			},
+			fail: function(res) {
+			  	console.log(res.errMsg)
+			}
+		})
+	},
+	handleMore: function() {
+		wx.showActionSheet({
+			itemList: ['编辑', '删除'],
+			itemColor: '#666',
+			success: (res) => {
+				switch(res.tapIndex) {
+					case 0:
+						this.gotoSend()
+						break;
+					case 1:
+						this.handleDelete()
+						break;
+				}
+			},
+			fail: function(res) {
+			  	console.log(res.errMsg)
+			}
+		})
+	},
 	gotoOfficialInfoList: function(e) {
         wx.redirectTo({
             url: `../officialInfoList/index?officialId=${this.data.official.officialId}`
@@ -111,11 +166,12 @@ Page({
 			success: (res) => {
 				wx.hideLoading()
 				if(res.code === 200) {
-					const { official, officialInfo, isOfficialInfoSupport } = res.data
+					const { official, officialInfo, isOfficialInfoSupport, isOneself } = res.data
 					this.setData({
 						official,
 						officialInfo,
-						isOfficialInfoSupport
+						isOfficialInfoSupport,
+						isOneself
 					})
 				}
 			}

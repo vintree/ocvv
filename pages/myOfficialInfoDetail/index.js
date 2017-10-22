@@ -96,6 +96,7 @@ Page({
             url: `../officialInfoList/index`
         })
 	},
+	
 	gotoSend: function(e) {
 		wx.navigateTo({
             url: `../send/index?officialInfoId=${this.data.officialInfo.officialInfoId}`
@@ -124,6 +125,25 @@ Page({
 							}
 						})
 					})
+				}
+			},
+			fail: function(res) {
+			  	console.log(res.errMsg)
+			}
+		})
+	},
+	handleMore: function() {
+		wx.showActionSheet({
+			itemList: ['编辑', '删除'],
+			itemColor: '#666',
+			success: (res) => {
+				switch(res.tapIndex) {
+					case 0:
+						this.gotoSend()
+						break;
+					case 1:
+						this.handleDelete()
+						break;
 				}
 			},
 			fail: function(res) {

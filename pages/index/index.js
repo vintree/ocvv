@@ -48,6 +48,7 @@ Page({
 					page: page || 1,
 					pageSize: pageSize || 10
 				},
+				isLogin: true,
 				success: (res) => {
 					wx.hideLoading()
 					if(res.code === 200) {
