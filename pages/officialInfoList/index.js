@@ -34,6 +34,21 @@ Page({
             url: `../officialInfoDetail/index${urlx.stringify(params, true)}`
         })
 	},
+	handleOfficialFocus: function(e) {
+		const { params } = e.currentTarget.dataset		
+		request({
+			key: 'dynamicFocus',
+			data: {
+				officialId: params.officialId
+			},
+			isLogin: true,
+			success: (res) => {
+				if(res.code === 200) {
+					this.requestOfficialGetOfficialDetail()
+				}
+			}
+		})
+	},
 	onPullDownRefresh: function() {
 		if(isRequest) return
 		if(!lockRequest) {
@@ -100,18 +115,7 @@ Page({
 			})
 		}
 	},
-	onLoad: function (res) {
-		this.setData({
-			urlParams: res
-		})
-		this.requestRule({
-			page: 1, 
-			pageSize: 10,
-		})
-		wx.showLoading({
-			title: '加载中...',
-			mask: true
-		})
+	requestOfficialGetOfficialDetail: function() {
 		request({
 			key: 'officialGetOfficialDetail',
 			data: {
@@ -127,5 +131,19 @@ Page({
 				}
 			}
 		})
+	},
+	onLoad: function (res) {
+		this.setData({
+			urlParams: res
+		})
+		this.requestRule({
+			page: 1, 
+			pageSize: 10,
+		})
+		wx.showLoading({
+			title: '加载中...',
+			mask: true
+		})
+		this.requestOfficialGetOfficialDetail()
 	}
 })

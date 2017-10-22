@@ -6,9 +6,7 @@
         <image class='official-msg-bottom-bk' src="../../pic/img-bk.png" />
         <view class='official-msg-detail-content'>
             
-
-
-            <view class='official-msg-detail-header' style='background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506894664095&di=381c49e6492ae745217c69ecfe50de71&imgtype=0&src=http%3A%2F%2Fbpic.ooopic.com%2F15%2F30%2F99%2F15309959-c70d94627f2d4c2fb64b24fafe812113-2.jpg")'>
+            <view class='official-msg-detail-header' style='background-image: url(official.officialPicUrl)'>
                 <view class='official-msg-detail-header-layout'></view>
                 <view class='official-msg-detail-header-official'>{{official.officialName}}</view>
                 <view class='official-msg-detail-header-main'>
