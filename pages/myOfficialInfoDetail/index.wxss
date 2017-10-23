@@ -124,7 +124,7 @@
 }
 
 .official-msg-ico-item.active {
-    color: #E91E63;
+    color: #3385ff;
 }
 
 .official-msg-bottom-bk {

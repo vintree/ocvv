@@ -4,11 +4,13 @@ var app = getApp()
 var { api } = require('../../config/api.default')
 const { getEnhanceUserInfo } = require('../../lib/authorize')
 const { request } = require('../../lib/request')
+
+let isRequest = false
+let lockRequest = false
 Page({
 	data: {
 		userInfo: {},
 		officialInfo: {},
-		isFinish: false
 	},
 	gotoMyOfficialDetail: function() {
 		wx.navigateTo({
@@ -36,7 +38,17 @@ Page({
             url: `../myDynamic/index`
         })
 	},
-	onLoad: function (req) {
+	onPullDownRefresh: function() {
+		if(isRequest) return
+		if(!lockRequest) {
+			lockRequest = true
+			this.requestRule({
+				wxScrollType: 'top'
+			})
+		}
+	},
+	requestRule: function(options = {}) {
+		const { wxScrollType } = options
 		wx.showLoading({
 			title: '加载中...',
 			mask: true
@@ -65,8 +77,26 @@ Page({
 								},
 								success: (res) => {
 									if(res.code === 200) {
-										this.setData({
-											officialInfo: res.data.officialInfo
+										if(wxScrollType === 'top') {
+											wx.stopPullDownRefresh()
+											wx.showToast({
+												title: '刷新成功',
+												icon: 'success',
+												duration: 1200
+											})
+										}
+										setTimeout(() => {
+											isRequest = false
+											this.setData({
+												officialInfo: res.data.officialInfo,
+											})
+											lockRequest = false
+										})
+									} else {
+										wx.showToast({
+											title: '加载失败',
+											icon: 'fial',
+											duration: 1200
 										})
 									}
 								}
@@ -81,5 +111,11 @@ Page({
 		}, (res) => {
 			wx.hideLoading()
 		})
+	},
+	onLoad: function (res) {
+		this.setData({
+			urlParams: res
+		})
+		this.requestRule()
 	}
 })

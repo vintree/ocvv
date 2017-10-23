@@ -26,7 +26,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #E91E63;
+    background-color: #3385ff;
     color: #fff;
     border-radius: 6rpx;
 }

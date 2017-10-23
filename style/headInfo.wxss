@@ -1,7 +1,7 @@
 .find-header {
     height: 100rpx;
     line-height: 100rpx;
-    background-color: #E91E63;
+    background-color: #3385ff;
     color: #fff;
     font-size: 32rpx;
     padding: 0 20rpx;

@@ -27,12 +27,13 @@ Page({
         })
 	},
 	handleOfficialFocus: function(e) {
-		const { params, index } = e.currentTarget.dataset
+		const { params, index, isfocus } = e.currentTarget.dataset
 		console.log('index', index);
 		request({
 			key: 'dynamicFocus',
 			data: {
-				officialId: params.officialId
+				officialId: params.officialId,
+				isOfficialFocus: isfocus
 			},
 			isLogin: true,
 			success: (res) => {

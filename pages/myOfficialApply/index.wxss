@@ -90,7 +90,7 @@ page {
 .myconf-info-item-left {
     flex: 1;
     text-align: center;
-    color: #E91E63;
+    color: #3385ff;
     font-size: 44rpx;
 }
 
@@ -107,7 +107,7 @@ page {
 .myconf-info-item-right-item-name {
     font-size: 42rpx;
     color: #4D4D4D;
-    /* border-bottom: 1rpx solid #E91E63; */
+    /* border-bottom: 1rpx solid #3385ff; */
     padding: 20rpx 0;
     width: auto;
 }
@@ -123,7 +123,7 @@ page {
 .myconf-info-item-right-item-label {
     font-size: 32rpx;
     color: #999999;
-    border-bottom: 1rpx solid #E91E63;
+    border-bottom: 1rpx solid #3385ff;
     padding: 20rpx 0;    
 }
 
@@ -135,7 +135,7 @@ page {
     line-height: 120rpx;
     width: 120rpx;
     font-size: 54rpx;
-    background-color: #E91E63;
+    background-color: #3385ff;
     color: #fff;
     text-align: center;
     border-radius: 50%;
@@ -174,7 +174,7 @@ page {
     position: fixed;
     bottom: 40rpx;
     right: 40rpx;
-    background-color: #E91E63;
+    background-color: #3385ff;
     color: #fff;
     font-size: 30rpx;
     border-radius: 80rpx;

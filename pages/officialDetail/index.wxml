@@ -78,8 +78,10 @@
                 </view>
             </view>
         </view>
-
-    <button class='submit-bt' form-type='submit' size="defaultSize" hover-class="defaultTap">保存</button>
+        
+        <!--
+        <button class='submit-bt' form-type='submit' size="defaultSize" hover-class="defaultTap">保存</button>
+        -->
     </form>
 	</view>
 

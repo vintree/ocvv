@@ -35,11 +35,12 @@ Page({
         })
 	},
 	handleOfficialFocus: function(e) {
-		const { params } = e.currentTarget.dataset		
+		const { params, isfocus } = e.currentTarget.dataset		
 		request({
 			key: 'dynamicFocus',
 			data: {
-				officialId: params.officialId
+				officialId: params.officialId,
+				isOfficialFocus: isfocus
 			},
 			isLogin: true,
 			success: (res) => {

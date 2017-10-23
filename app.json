@@ -17,7 +17,7 @@
     "pages/sendConf/index"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#E91E63",
+    "navigationBarBackgroundColor": "#3385ff",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "官方消息",
     "backgroundColor": "#E2E2E2",
@@ -27,7 +27,7 @@
   },
   "tabBar": {
     "color": "#8a8a8a",
-    "selectedColor": "#d81e06",
+    "selectedColor": "#3385ff",
     "position": "bottom",
     "list": [
       {

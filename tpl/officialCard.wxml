@@ -12,8 +12,8 @@
                     简介：{{item.officialDes}}
                 </view>
                 <view class='official-item-area1-2'>
-                    <button type="default" size="mini" plain="plain}" disabled="disabled" bindtap="defaultTap" hover-class="defaultTap" wx:if='{{item.isOfficialFocus}}'>已关注</button>
-                    <button class='official-item-focus iconfont icon-jia' size="mini" catchtap="handleOfficialFocus" hover-class="defaultTap" data-params='{{item}}' data-index='{{index}}' wx:else> 关注</button>
+                    <button class='official-item-focus-default' type="default" size="mini" catchtap="handleOfficialFocus" hover-class="defaultTap" wx:if='{{item.isOfficialFocus}}' data-params='{{item}}' data-index='{{index}}' data-isfocus='{{false}}'>已关注</button>
+                    <button class='official-item-focus iconfont icon-jia' size="mini" catchtap="handleOfficialFocus" hover-class="defaultTap" data-params='{{item}}' data-index='{{index}}' data-isfocus='{{true}}' wx:else> 关注</button>
                 </view>
             </view>
             <view class='official-item-area2'>
@@ -36,8 +36,8 @@
                     简介：{{item.officialDes}}
                 </view>
                 <view class='official-item-area1-2'>
-                    <button type="default" size="mini" plain="plain}" disabled="disabled" bindtap="defaultTap" hover-class="defaultTap" wx:if='{{item.isOfficialFocus}}'>已关注</button>
-                    <button class='official-item-focus iconfont icon-jia' size="mini" catchtap="handleOfficialFocus" hover-class="defaultTap" data-params='{{item}}' wx:else> 关注</button>
+                    <button class='official-item-focus-default' type="default" size="mini" catchtap="handleOfficialFocus" hover-class="defaultTap" wx:if='{{item.isOfficialFocus}}' data-params='{{item}}' data-isfocus='{{false}}'>已关注</button>
+                    <button class='official-item-focus iconfont icon-jia' size="mini" catchtap="handleOfficialFocus" hover-class="defaultTap" data-params='{{item}}' data-isfocus='{{true}}' wx:else> 关注</button>
                 </view>
             </view>
             <view class='official-item-area2'>

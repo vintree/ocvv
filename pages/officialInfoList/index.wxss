@@ -103,6 +103,14 @@
 }
 
 .official-item-focus {
-    background-color: #E91E63;
+    background-color: #3385ff;
     color: #fff;
+}
+
+.official-item-focus::after {
+    border: 1rpx solid #2d78f4;
+}
+
+.official-item-focus-default {
+    color: #999999 !important;
 }
