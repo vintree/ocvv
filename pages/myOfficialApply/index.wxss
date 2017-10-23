@@ -24,6 +24,7 @@ page {
     bottom: 0;
     left: 0;
     height: 200rpx;
+    width: 100%;
 }
 
 .myconf-info-header {
@@ -117,7 +118,7 @@ page {
 }
 
 .myconf-info-item-right-input-placeholder {
-    color: #ACACAC;
+    color: #999;
 }
 
 .myconf-info-item-right-item-label {
@@ -170,6 +171,10 @@ page {
     width: 88%;
 }
 
+.myconf-info-item-right-item-address-text.default {
+    color: #999;
+}
+
 .submit-bt {
     position: fixed;
     bottom: 40rpx;
@@ -189,3 +194,11 @@ page {
 .placeholder-color {
     color: #999
 }
+
+/* input::-webkit-input-placeholder {
+    color: #999    
+}
+
+area::-webkit-input-placeholder {
+    color: #999    
+} */

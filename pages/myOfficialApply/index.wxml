@@ -47,7 +47,7 @@
                 <view class='myconf-info-item-right'>
                     <view class='myconf-info-item-right-group'>
                         <view class='myconf-info-item-right-item'>
-                            <textarea class='myconf-info-item-right-item-name myconf-info-item-right-item-name-area' name='content' bindblur='bindTextAreaBlur' placeholder='请输入公司描述' maxlength='10000' name='officialDes' bindinput='handleInputOfficialDes' value='{{officialInfo.officialDes}}' />
+                            <textarea class='myconf-info-item-right-item-name myconf-info-item-right-item-name-area' placeholder-class='myconf-info-item-right-input-placeholder' name='content' bindblur='bindTextAreaBlur' placeholder='请输入公司描述' maxlength='10000' name='officialDes' bindinput='handleInputOfficialDes' value='{{officialInfo.officialDes}}'  />
                         </view>
                     </view>
                 </view>
@@ -59,8 +59,8 @@
                     <view class='myconf-info-item-right-group'>
                         <view class='myconf-info-item-right-item'>
                             <view class='myconf-info-item-right-item-address' bindtap='handleMap'>
-                                <view class='myconf-info-item-right-item-address-text'>
-                                    {{officialInfo.officialAddress}}
+                                <view class='myconf-info-item-right-item-address-text {{officialInfo.officialAddress ? "" : "placeholder-color"}}'>
+                                    {{officialInfo.officialAddress || '请选择地图地址'}}
                                 </view>
                                 <view class='my-map fright iconfont icon-dizhi'></view>
                             </view>
@@ -92,7 +92,7 @@
 
         </view>
 
-    <button class='submit-bt' form-type='submit' size="defaultSize" hover-class="defaultTap">申请</button>
+    <button class='submit-bt' form-type='submit' size="defaultSize" hover-class="defaultTap">申请（请填写全部信息）</button>
     </form>
 	</view>
 

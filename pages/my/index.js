@@ -53,6 +53,7 @@ Page({
 			title: '加载中...',
 			mask: true
 		})
+		console.log('wxScrollType1111', wxScrollType);
 		getEnhanceUserInfo((wxSessionCode, userInfo) => {
 			request({
 				key: 'userValid',
@@ -61,6 +62,7 @@ Page({
 				},
 				isLogin: true,
 				success: (res) => {
+					console.log('ddss', res);
 					if(res.code === 200) {
 						this.setData({
 							userInfo: {
@@ -68,6 +70,14 @@ Page({
 								...res.data.userInfo
 							}
 						})
+						if(wxScrollType === 'top') {
+							wx.stopPullDownRefresh()
+							wx.showToast({
+								title: '刷新成功',
+								icon: 'success',
+								duration: 1200
+							})
+						}
 						if(res.data.userInfo.officialId) {
 							request({
 								key: 'officialGetOfficialDetail',
@@ -77,14 +87,8 @@ Page({
 								},
 								success: (res) => {
 									if(res.code === 200) {
-										if(wxScrollType === 'top') {
-											wx.stopPullDownRefresh()
-											wx.showToast({
-												title: '刷新成功',
-												icon: 'success',
-												duration: 1200
-											})
-										}
+										console.log('wxScrollType', wxScrollType);
+										
 										setTimeout(() => {
 											isRequest = false
 											this.setData({

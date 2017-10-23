@@ -13,13 +13,13 @@
     height: 350rpx;
     background-repeat: no-repeat;
     background-position: center center;
-    margin-right: 20rpx;
     margin-bottom: 20rpx;
     border-radius: 6rpx;
     overflow: hidden;
 }
 
 .group-item:nth-child(2n) {
+    float: right;
     margin-right: 0;
 }
 

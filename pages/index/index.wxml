@@ -5,8 +5,8 @@
 <view class="container">
 
 	<view wx:if='{{officialInfoList.length === 0}}'>
-		<image src="../../pic/undefined.png" />
 		<view class='undefined-text' bindtap="gotoCircleList">
+			<text class='undefined-text-icon iconfont icon-kong1'></text>
 			点击·前往发现，关注更多官网
 		</view>
 	</view>

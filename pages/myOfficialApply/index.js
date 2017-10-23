@@ -98,8 +98,80 @@ Page({
 		})
 	},
 	formSubmit: function(e) {
+		const { officialName, officialFullName, 
+			officialEmail, officialPhone, 
+			officialDes, officialDoorplate, 
+			officialLat, officialPicUrl,
+			circleId
+		} = this.data.officialInfo
+		
+		if(officialPicUrl === '' || officialPicUrl === undefined) {
+			wx.showModal({
+				title: '提示',
+				content: '请上传图片'
+			})
+			return
+		}
+
+		if(officialName === '' || officialName === undefined) {
+			wx.showModal({
+				title: '提示',
+				content: '请输入名称'
+			})
+			return
+		}
+		if(officialFullName === '' || officialFullName === undefined) {
+			wx.showModal({
+				title: '提示',
+				content: '请输入公司/机构全称'
+			})
+			return
+		}
+		if(officialEmail === '' || officialEmail === undefined) {
+			wx.showModal({
+				title: '提示',
+				content: '请输入邮箱'
+			})
+			return
+		}
+		if(officialPhone === '' || officialPhone === undefined) {
+			wx.showModal({
+				title: '提示',
+				content: '请输入电话号'
+			})
+			return
+		}
+		if(officialDes === '' || officialDes === undefined) {
+			wx.showModal({
+				title: '提示',
+				content: '请输入公司描述'
+			})
+			return
+		}
+		if(officialLat === '' || officialLat === undefined) {
+			wx.showModal({
+				title: '提示',
+				content: '请输入公司地址'
+			})
+			return
+		}
+		if(officialDoorplate === '' || officialDoorplate === undefined) {
+			wx.showModal({
+				title: '提示',
+				content: '请输入门牌号'
+			})
+			return
+		}
+		if(circleId === '' || circleId === undefined) {
+			wx.showModal({
+				title: '提示',
+				content: '请选择圈子'
+			})
+			return
+		}
+		
 		wx.showLoading({
-			title: '加载更多...',
+			title: '正在提交申请...',
 			mask: true
 		})
 		request({

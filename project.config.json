@@ -28,9 +28,9 @@
 				},
 				{
 					"id": 2,
-					"name": "官方消息详情",
+					"name": "官方信息详情",
 					"pathName": "pages/officialInfoDetail/index",
-					"query": "officialInfoId=59ec254a95034513b6fb46cf"
+					"query": "officialInfoId=59ee0b26297274757e5f38bf"
 				},
 				{
 					"id": 3,

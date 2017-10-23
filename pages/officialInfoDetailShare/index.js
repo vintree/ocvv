@@ -85,12 +85,12 @@ Page({
 	},
 	gotoOfficialInfoList: function(e) {
         wx.redirectTo({
-            url: `../officialInfoList/index?officialId=${this.data.urlParams.officialId}`
+            url: `../officialInfoList/index?officialId=${this.data.official.officialId}`
         })
 	},
 	gotoOfficialInfoDetailShare: function(e) {
 		wx.navigateTo({
-            url: `../officialInfoDetailShare/index?officialId=${this.data.urlParams.officialId}`
+            url: `../officialInfoDetailShare/index?officialId=${this.data.official.officialId}`
         })
 	},
 	onLoad: function (res) {

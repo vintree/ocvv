@@ -38,10 +38,12 @@
                     <view class='official-msg-ico-item-icon iconfont icon-fenxiang1'></view>
                     <view class='official-msg-ico-item-text'>分享 {{officialInfo.officialInfoShare}}</view>
                 </button>
+                <!--
                 <view class='official-msg-ico-item' bindtap='gotoOfficialInfoDetailShare'>
                     <view class='official-msg-ico-item-icon iconfont icon-quan'></view>
                     <view class='official-msg-ico-item-text'>圈分享</view>
                 </view>
+                -->
                 <view class='official-msg-ico-item' bindtap='gotoOfficialInfoList'>
                     <view class='official-msg-ico-item-icon iconfont icon-gongsi1'></view>
                     <view class='official-msg-ico-item-text'>官方</view>

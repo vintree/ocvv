@@ -54,7 +54,14 @@ view, scroll-view, swiper, movable-area, cover-view {
 }
 
 .undefined-text {
+	position: absolute;
+	bottom: 100rpx;
+	width: 100%;
 	text-align: center;
 	margin-top: 10px;
 	color: #999;
+}
+
+.undefined-text-icon {
+	font-size: 60rpx;
 }

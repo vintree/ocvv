@@ -3,10 +3,53 @@
 var app = getApp()
 const { request, uploadFile } = require('../../lib/request')
 
+let isRequest = false
+let lockRequest = false
 Page({
 	data: {
 		officialInfo: {},
 		urlParams: {}
+	},
+	onPullDownRefresh: function() {
+		if(isRequest) return
+		if(!lockRequest) {
+			lockRequest = true
+			this.requestRule({
+				wxScrollType: 'top'
+			})
+		}
+	},
+	requestRule: function(options = {}) {
+		const { wxScrollType } = options
+		if(!this.data.isFinish || wxScrollType === 'top') {
+			isRequest = true
+			request({
+				key: 'officialGetOfficialDetail',
+				data: {
+					officialId: this.data.urlParams.officialId
+				},
+				success: (res) => {
+					wx.hideLoading()
+					if(res.code === 200) {
+						if(wxScrollType === 'top') {
+							wx.stopPullDownRefresh()
+							wx.showToast({
+								title: '刷新成功',
+								icon: 'success',
+								duration: 1200
+							})
+						}
+						setTimeout(() => {
+							isRequest = false
+							this.setData({
+								officialInfo: res.data.officialInfo,
+							})
+							lockRequest = false
+						})
+					}
+				}
+			})
+		}
 	},
 	uploadPic: function() {
 		wx.chooseImage({
@@ -91,19 +134,20 @@ Page({
 		this.setData({
 			urlParams: req
 		})
-		request({
-			key: 'officialGetOfficialDetail',
-			data: {
-				officialId: req.officialId
-			},
-			isLogin: true,
-			success: (res) => {
-				if(res.code === 200) {
-					this.setData({
-						officialInfo: res.data.officialInfo
-					})
-				}
-			}
-		})
+		this.requestRule()
+		// request({
+		// 	key: 'officialGetOfficialDetail',
+		// 	data: {
+		// 		officialId: req.officialId
+		// 	},
+		// 	isLogin: true,
+		// 	success: (res) => {
+		// 		if(res.code === 200) {
+		// 			this.setData({
+		// 				officialInfo: res.data.officialInfo
+		// 			})
+		// 		}
+		// 	}
+		// })
 	}
 })
