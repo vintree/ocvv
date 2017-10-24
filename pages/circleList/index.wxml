@@ -4,11 +4,12 @@
 <import src="../../tpl/headInfo.wxml"/>
 
 <view class="container">
-    <!--
-	<view class='' wx:if='{{icoList.length === 0}}'>
-		<image src="../../pic/undefined.png" />
+	<view wx:if='{{circleList.length === 0}}'>
+		<view class='undefined-text'>
+			<text class='undefined-text-icon iconfont icon-kong1'></text>
+			暂无数据，稍后就来...
+		</view>
 	</view>
-    -->
 
 	<view class='group-list'>
         <template is="circleCard" wx:for='{{circleList}}' wx:key='{{item.circleId}}' data='{{item}}'></template>

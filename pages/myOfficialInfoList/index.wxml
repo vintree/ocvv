@@ -4,11 +4,12 @@
 <import src="../../tpl/officialInfoCard.wxml"/>
 
 <view class="container">
-
-	<view class='' wx:if='{{officialInfoList.length === 0}}'>
-		<image src="../../pic/undefined.png" />
+	<view wx:if='{{officialInfoList.length === 0}}'>
+		<view class='undefined-text'>
+			<text class='undefined-text-icon iconfont icon-kong1'></text>
+			暂无数据，稍后就来...
+		</view>
 	</view>
-
 
 	<view class='official-list'>
         <template is="officialInfoCard" wx:for='{{officialInfoList}}' data='{{item}}' wx:key='{{item.update}}'></template>

@@ -3,9 +3,12 @@
 <import src="../../tpl/officialCard.wxml"/>
 
 <view class="container">
-    
-	<view class='' wx:if='{{officialList.length === 0}}'>
-		<image src="../../pic/undefined.png" />
+
+	<view wx:if='{{officialList.length === 0}}'>
+		<view class='undefined-text'>
+			<text class='undefined-text-icon iconfont icon-kong1'></text>
+			暂无数据，稍后就来...
+		</view>
 	</view>
 
 	<view class='official-list'>

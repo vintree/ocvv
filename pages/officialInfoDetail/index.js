@@ -25,8 +25,8 @@ Page({
 			console.log(res.target)
 		}
 		return {
-			title: official.officialName + ' · 官方消息',
-			path: `pages/officialInfoDetail?officialInfoId=${urlParams.officialInfoId}`,
+			title: official.officialName,
+			path: `/pages/officialInfoDetail/index?officialInfoId=${urlParams.officialInfoId}`,
 			success: (res) => {
 				officialInfo.officialInfoShare = officialInfo.officialInfoShare++
 				this.setData({
@@ -164,6 +164,11 @@ Page({
         })
 	},
 	onLoad: function (res) {
+		let officialInfoId = res.officialInfoId
+		if(res.scene) {
+			officialInfoId = decodeURIComponent(res.scene)
+		}
+		res.officialInfoId = officialInfoId
 		this.setData({
 			urlParams: res
 		})

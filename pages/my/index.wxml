@@ -23,7 +23,7 @@
                     <text class='my-item-area2-1'>{{officialInfo.officialFocus}} 关注 · {{officialInfo.officialFullSupport}} 赞同 · {{officialInfo.officialFullShare}} 分享</text>
                     <text class='my-item-area2-3 iconfont icon-you'></text>
                 </view>
-                <view class='my-item-area2' wx:if='{{!!userInfo.officialId && !officialInfo.isActive}}'>
+                <view class='my-item-area2' wx:if='{{!!userInfo.officialId && officialInfo.isActive === false}}'>
                     申请成功，正在审核中
                 </view>
             </view>

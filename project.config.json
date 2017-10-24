@@ -12,7 +12,7 @@
 	"projectname": "%E5%AE%98%E6%96%B9%E6%B6%88%E6%81%AF",
 	"condition": {
 		"weapp": {
-			"current": -1,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -24,13 +24,13 @@
 					"id": 1,
 					"name": "官方消息列表",
 					"pathName": "pages/officialInfoList/index",
-					"query": "officialId=59dbbd2651e8a32a8c280074"
+					"query": "officialId=59ee0a1f297274757e5f38be"
 				},
 				{
 					"id": 2,
 					"name": "官方信息详情",
 					"pathName": "pages/officialInfoDetail/index",
-					"query": "officialInfoId=59ee0b26297274757e5f38bf"
+					"query": "scene=59ef2349e4967b5fb56626f5"
 				},
 				{
 					"id": 3,
