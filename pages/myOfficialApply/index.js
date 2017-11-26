@@ -13,6 +13,7 @@ Page({
 	uploadPic: function() {
 		wx.chooseImage({
 			count: 1,
+			sizeType: ['compressed'],
 			success: (res) => {
 				const tempFilePaths = res.tempFilePaths
 				uploadFile({

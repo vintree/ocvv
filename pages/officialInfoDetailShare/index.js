@@ -93,6 +93,22 @@ Page({
             url: `../officialInfoDetailShare/index?officialId=${this.data.official.officialId}`
         })
 	},
+	onReady:function(){ 
+
+		// wx.getSystemInfo({
+		// 	success: (res) => {
+		// 		console.log('ddss', res);
+		// 		const { windowWidth, windowHeight } = res
+		// 		const ctx = wx.createCanvasContext('myCanvas')
+		// 		ctx.drawImage('https://chuantu.biz/t6/111/1508870571x605558817.png', 0, 0, windowWidth, windowHeight)
+		// 		ctx.draw()
+		// 	}
+		// })
+		// const ctx = wx.createCanvasContext('myCanvas')
+		// ctx.drawImage('https://pic.ieee.top/official/circle/share.png', 0, 0, 100, 200)
+		// ctx.draw()
+		
+	}, 
 	onLoad: function (res) {
 		this.setData({
 			urlParams: res
@@ -117,8 +133,42 @@ Page({
 						officialInfo,
 						isOfficialInfoSupport
 					})
+
+					// const ctx = wx.createCanvasContext('myCanvas')
+					// ctx.drawImage('https://chuantu.biz/t6/111/1508870571x605558817.png', 0, 0, 100, 200)
+					// ctx.draw()
+					// setTimeout(() => {
+					// 	console.log('ddsss');
+					// 	wx.canvasToTempFilePath({
+					// 		x: 0,
+					// 		y: 0,
+					// 		width: 375,
+					// 		height: 667,
+					// 		destWidth: 375,
+					// 		destHeight: 667,
+					// 		canvasId: 'myCanvas',
+					// 		success: function(res) {
+					// 			console.log('ddsssdsasdas');
+					// 			console.log('22222', res.tempFilePath)
+				
+					// 			wx.previewImage({
+					// 				urls: [res.tempFilePath],
+					// 				success: (res) => {
+					// 					console.log('success', res);
+					// 				},
+					// 				complete: (res) => {
+					// 					console.log('complete:', res);
+					// 				}
+					// 			})
+					// 		},
+					// 		complete: (res) => {
+					// 			console.log(res);
+					// 		}
+					// 	})
+					// }, 2000)
 				}
 			}
 		})
+		
 	}
 })

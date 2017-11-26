@@ -6,7 +6,7 @@
         <image class='official-msg-bottom-bk' src="../../pic/img-bk.png" />
         <view class='official-msg-detail-content'>
             
-            <view class='official-msg-detail-header' style='background-image: url(official.officialPicUrl)'>
+            <view class='official-msg-detail-header' style='background-image: url({{official.officialPicUrl}})'>
                 <view class='official-msg-detail-header-layout'></view>
                 <view class='official-msg-detail-header-official'>{{official.officialName}}</view>
                 <view class='official-msg-detail-header-main'>
@@ -50,6 +50,8 @@
                 </view>
             </view>
         </view>
-
+        <!--
+        <canvas canvas-id='myCanvas' class='myCanvas'>的撒大撒</canvas>
+        -->
     </view>
 </view>

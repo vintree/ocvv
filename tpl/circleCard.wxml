@@ -6,7 +6,7 @@
         <text class='group-text1'>{{item.circleName}}</text>
         <text class='group-text2'>{{item.circleNameEN}}</text>
         <text class='group-text3'>
-            {{item.officialCount}} 官方
+            {{item.officialCount}}
         </text>
     </view>
 </template>
